@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>免费领470元父母体检套餐</title>
+  <meta name="description" content="限量1000份，先到先抢">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+  <link href="/static/favicon.ico" type="image/x-icon" rel="icon">
+  <link href="/static/favicon.ico" type="image/x-icon" rel="shortcut icon">
+  <link rel="stylesheet" href="css/reset.css">
+  <script src="js/flexible.js"></script>
+
+  <style>
+    .physical{background-color: #fff;}
+    .physical img{display: block;width: 100%;height: 100%;}
+    .physical .phy-context{margin: 0.533333rem;padding: 0.64rem 0.533333rem 1.0rem;background-color: #fff;border-radius: 0.133333rem;box-shadow: 0 0 0.533333rem 0.133333rem #f1f1f1;}
+    .physical .form-box{margin-top: 0.666667rem;}
+    .physical .form-item{position: relative;width: 100%;padding-bottom: 0.4rem;text-align: center;}
+    .physical .form-item input{width: 8.08rem;height: 0.946667rem;text-indent: 0.266667rem;color: #bbb;border: 1px solid #b8a678;border-radius: 0.066667rem;}
+    .physical .btn-timer{width: 2.24rem;height: 0.666667rem;background-color: #b8a678;color: #fff;}
+    .physical .btn-timer:disabled{background-color: #bbb;}
+    .physical .state{position: absolute;top: 0.133333rem;right: 0.133333rem;width: 2.24rem;height: 0.666667rem;z-index: 2;}
+    .img-code{width: 2.24rem;height: 0.666667rem;}
+    .physical .erorr{height: 0.293333rem; margin-top: 0.306667rem;text-align: left;font-size: 0.32rem;color: #745849;}
+    .physical .btn-phy-reg{width: 5.08rem;height: 1.026667rem;margin: 0 auto;font-size: 0.4rem;text-align: center;color: #fff;line-height: 1.026667rem;background-color: #b8a678;border-radius: 0.133333rem;box-shadow: 0.066667rem 0.066667rem 0 0.013333rem #94855d;}
+    .physical .btn-phy-reg:disabled{background-color: #bbb;box-shadow: 0.066667rem 0.066667rem 0 0.013333rem #999; }
+    .physical .phy-mask{position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 999;background-color: #000;opacity: .4;}
+    .physical .phy-alert{position: fixed;top: 25%;width: 75%;margin: 0 1.333333rem;padding: 1.333333rem 0;font-size: 0.4rem;color: #745849;border: 1px solid #94855d;background-color: #fff;text-align: center;border-radius: 10px;z-index: 1000;}
+    .physical .phy-close{position: absolute;top: 0.266667rem;right: 0.333333rem;}
+    .dn{display: none;}
+    /* 城市列表 */
+    .form-city{margin: .533333rem 0;}
+    .form-city .btn-phy-reg{width: 6.4rem;}
+    .city-box{position: fixed;top: 15%;width: 90%;margin: 0 5%;padding: 1rem 0;background-color: #fff;box-shadow: 0 0 0.533333rem 0.133333rem #e6e6e6;z-index: 1001;}
+    .city-list-box{max-height: 10rem;overflow-y: auto;}
+    .city-list{width: 92%;margin: 0 auto;border-radius: 10px;}
+    .city-list caption{padding: .16rem 0 .186667rem;background-color: #b8a678;color: #fff;font-size: .4rem;text-align: center; }
+    .city-list thead{background-color: #dbd2bb;}
+    .city-list thead th{padding: .16rem 0 .186667rem;text-align: center;color: #745849;font-weight: normal;border: 1px solid #b8a678;}
+    .city-list tbody{color: #745849;}
+    .city-list tbody td{padding: .16rem 0 .186667rem;border: 1px solid #b8a678;text-align: center;font-size: 0.2rem; }
+    .city-list tbody tr:last-child{background-color: #dbd2bb;}
+    .city-list tbody tr:last-child td{border: 1px solid #dbd2bb;}
+    .city-close{position: absolute;top: 0.2rem;right: 0.2rem;color: #745849;}
+  </style>
+</head>
+
+<body>
+  <div class="physical">
+    <div>
+      <img src="../images/activitiesH5/physicalExamination/banner.jpg" alt="">
+    </div>
+    <div>
+      <img src="../images/activitiesH5/physicalExamination/content2.jpg" alt="">
+    </div>
+    <div class="phy-context">
+      <img src="../images/activitiesH5/physicalExamination/content.jpg" alt="">
+      <div class="form-box" id="regBox">
+        <div class="form-item">
+          <input type="text" id="mobile" placeholder="请输入手机号" autocomplete="off" maxlength="11" />
+          <div class="erorr" id="mobileError"></div>
+        </div>
+        <div class="form-item">
+          <input type="text" id="imgCode" placeholder="请输入验证码" autocomplete="off" maxlength="4">
+          <!-- <div class="state" onclick="getImgCode()"> -->
+            <img id="imgCodeSrc" onclick="getImgCode()" alt="点击刷新" class="state img-code" src="" />
+          <!-- </div> -->
+          <div class="erorr" id="imgCodeError"></div>
+        </div>
+        <div class="form-item">
+          <input type="text" id="phoneCode" placeholder="短信验证码" autocomplete="off" maxlength="6">
+          <div class="state">
+            <button type="button" id="btnSms" class="btn-timer" onclick="getPhoneCode()">发送验证码</button>
+          </div>
+          <div class="erorr" id="phoneCodeError"></div>
+        </div>
+        <div class="form-item">
+          <input type="password" id="passWord" placeholder="请输入密码" autocomplete="off" minlength="6" maxlength="20" />
+          <div class="erorr" id="pwdError"></div>
+        </div>
+        <div class="form-item">
+          <button onclick="register()" id="btnReg" class="btn-phy-reg">立即注册</button>
+        </div>
+      </div>
+      <div class="form-box dn" id="appRegBox">
+        <div class="form-item">
+          <button onclick="toAppReg()" class="btn-phy-reg">立即注册</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-box form-city">
+      <div class="form-item">
+        <button onclick="showCity()" class="btn-phy-reg">体检套餐覆盖城市详情</button>
+      </div>
+    </div>
+    <div>
+      <img src="../images/activitiesH5/physicalExamination/role.jpg" alt="">
+    </div>
+    <div class="phy-alert dn">
+      <div class="phy-close" onclick="closeAlert()">X</div>
+      <div id="alertContext">恭喜您，注册成功！</div>
+    </div>
+    <div class="phy-mask dn"></div>
+    <div class="city-box dn">
+      <div class="city-close" onclick="closeCity()">X</div>
+      <div class="city-list-box">
+        <table class="city-list" cellpadding="0" cellspacing="0">
+          <caption>孝心套餐所覆盖城市机构</caption>
+          <thead>
+            <tr>
+              <th>省份</th>
+              <th>城市</th>
+              <th>省份</th>
+              <th>城市</th>
+              <th>省份</th>
+              <th>城市</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>北京市</td>
+              <td>北京（6区26家机构）</td>
+              <td rowspan="3">河北</td>
+              <td>石家庄市</td>
+              <td rowspan="2">江西</td>
+              <td>赣州市</td>
+            </tr>
+            <tr>
+              <td>上海市</td>
+              <td>上海（9区23家机构）</td>
+              <td>唐山市</td>
+              <td>南昌市</td>
+            </tr>
+            <tr>
+              <td>重庆市</td>
+              <td>重庆（5区7家机构）</td>
+              <td>邢台市</td>
+              <td rowspan="7">辽宁</td>
+              <td>鞍山市</td>
+            </tr>
+            <tr>
+              <td>天津市</td>
+              <td>天津（6区11家机构）</td>
+              <td rowspan="10">河南</td>
+              <td>安阳市</td>
+              <td>朝阳市</td>
+            </tr>
+            <tr>
+              <td rowspan="5">安徽</td>
+              <td>蚌埠市</td>
+              <td>济源市</td>
+              <td>大连市</td>
+            </tr>
+            <tr>
+              <td>亳州市</td>
+              <td>开封市</td>
+              <td>丹东市</td>
+            </tr>
+            <tr>
+              <td>合肥市</td>
+              <td>洛阳市</td>
+              <td>锦州市</td>
+            </tr>
+            <tr>
+              <td>六安市</td>
+              <td>南阳市</td>
+              <td>沈阳市</td>
+            </tr>
+            <tr>
+              <td>芜湖市</td>
+              <td>平顶山市</td>
+              <td>营口市</td>
+            </tr>
+            <tr>
+              <td rowspan="2">福建</td>
+              <td>福州市</td>
+              <td>濮阳市</td>
+              <td rowspan="11">山东</td>
+              <td>菏泽市</td>
+            </tr>
+            <tr>
+              <td>厦门市</td>
+              <td>许昌市</td>
+              <td>济南市</td>
+            </tr>
+            <tr>
+              <td>甘肃</td>
+              <td>兰州市</td>
+              <td>郑州市</td>
+              <td>济宁市</td>
+            </tr>
+            <tr>
+              <td rowspan="5">广州</td>
+              <td>东莞市</td>
+              <td>周口市</td>
+              <td>临沂市</td>
+            </tr>
+            <tr>
+              <td>佛山市</td>
+              <td>黑龙江</td>
+              <td>哈尔滨市</td>
+              <td>青岛市</td>
+            </tr>
+            <tr>
+              <td>广州市</td>
+              <td rowspan="3">湖北</td>
+              <td>黄石市</td>
+              <td>日照市</td>
+            </tr>
+            <tr>
+              <td>深圳市</td>
+              <td>武汉市</td>
+              <td>泰安市</td>
+            </tr>
+            <tr>
+              <td>珠海市</td>
+              <td>襄阳市</td>
+              <td>威海市</td>
+            </tr>
+            <tr>
+              <td rowspan="4">广西</td>
+              <td>桂林市</td>
+              <td rowspan="11">江苏</td>
+              <td>常熟市</td>
+              <td>潍坊市</td>
+            </tr>
+            <tr>
+              <td>柳州市</td>
+              <td>江阴市</td>
+              <td>烟台市</td>
+            </tr>
+            <tr>
+              <td>南宁市</td>
+              <td>昆山市</td>
+              <td>枣庄市</td>
+            </tr>
+            <tr>
+              <td>北海市</td>
+              <td>常州市</td>
+              <td rowspan="4">山西</td>
+              <td>晋城市</td>
+            </tr>
+            <tr>
+              <td>贵州</td>
+              <td>贵阳市</td>
+              <td>南京市</td>
+              <td>吕梁市</td>
+            </tr>
+            <tr>
+              <td rowspan="2">内蒙古</td>
+              <td>包头市</td>
+              <td>南通市</td>
+              <td>太原市</td>
+            </tr>
+            <tr>
+              <td>呼和浩特市</td>
+              <td>苏州市</td>
+              <td>运城市</td>
+            </tr>
+            <tr>
+              <td>宁夏</td>
+              <td>银川市</td>
+              <td>泰州市</td>
+              <td rowspan="3">陕西</td>
+              <td>西安市</td>
+            </tr>
+            <tr>
+              <td rowspan="2">新疆</td>
+              <td>哈密市</td>
+              <td>无锡市</td>
+              <td>咸阳市</td>
+            </tr>
+            <tr>
+              <td>乌鲁木齐市</td>
+              <td>徐州市</td>
+              <td>榆林市</td>
+            </tr>
+            <tr>
+              <td rowspan="4">吉林</td>
+              <td>吉林市</td>
+              <td>扬州市</td>
+              <td rowspan="2">四川</td>
+              <td>成都市</td>
+            </tr>
+            <tr>
+              <td>松原市</td>
+              <td rowspan="5">浙江</td>
+              <td>杭州市</td>
+              <td>乐山市</td>
+            </tr>
+            <tr>
+              <td>延边朝鲜自治州</td>
+              <td>宁波市</td>
+              <td rowspan="2">海南</td>
+              <td>澄迈县</td>
+            </tr>
+            <tr>
+              <td>长春市</td>
+              <td>嘉兴市</td>
+              <td>海口市</td>
+            </tr>
+            <tr>
+              <td rowspan="2">云南</td>
+              <td>昆明市</td>
+              <td>金华市</td>
+              <td rowspan="2">湖南</td>
+              <td>长沙市</td>
+            </tr>
+            <tr>
+              <td>大理白族自治州</td>
+              <td>衢州市</td>
+              <td>湘潭市</td>
+            </tr>
+            <tr>
+              <td colspan="6">—— 注：具体城市以预约系统为准 ——</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- <script src="js/zepto.min.js"></script> -->
+  <script src="/static/H5/js/jquery_1.11.0.min.js"></script>
+  <script src="/static/js/cookie.js"></script>
+  <script src="/static/js/md5.js"></script>
+  <script src="/static/js/config.js"></script>
+  <script src="/static/js/ajaxPrams.js"></script>
+  <script>
+
+      if(!getQueryString('v')){
+        $('#regBox').addClass('dn');
+        $('#appRegBox').removeClass('dn');
+      }
+
+      getImgCode();
+
+    var config = getParams();
+
+    function showCity() {
+      $('.city-box').removeClass('dn');
+    }
+
+    function closeCity() {
+      $('.city-box').addClass('dn');
+    }
+
+    // 跳转app
+    function toAppReg() {
+      var clientType = getQueryString('clientType');
+      if (clientType == 4) {
+        window.jstomobile.toRegister();
+      } else if (clientType == 5) {
+        toRegister();
+      }
+    }
+
+    // 验证使用
+    function regFn(str, reg) {
+      if (!str) return false;
+      if (!reg) return false;
+      return reg.test(str);
+    }
+
+    // 验证手机号
+    function mobileReg(str) {
+      var reg = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+      return regFn(str, reg);
+    }
+
+    // 验证密码
+    function pwdReg(str) {
+      var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)(?![_\!@#\$%\^&\*\(\)_\+=|<>,\.{}:;\]\[\~\/\?\"'\\-]+$)[A-Za-z0-9_\!@#\$%\^&\*\(\)_\+=|<>,\.{}:;\]\[\~\/\?\"'\\-]{6,20}$/;
+      return regFn(str, reg);
+    }
+
+    // 验证图形验证码
+    function imgCodeReg(str){
+      var reg = /\d{6}/;
+      return regFn(str, reg);
+    }
+
+    var pageId;
+    // 刷新图形验证码
+    function getImgCode() {
+      pageId = Math.floor(Math.random() * 1000000);
+      $('#imgCodeSrc').attr('src', BASE_URL + '/api/web/member/imgCode?pageId=' + pageId);
+    }
+
+    var btnSms = $('#btnSms');
+    // 发送短信
+    function getPhoneCode () {
+      var mobile = $('#mobile').val(),
+          imgCode = $('#imgCode').val();
+
+      if (!mobileReg(mobile)) {
+        mobileError.html('请输入正确的手机号');
+        return;
+      } else {
+        mobileError.html('');
+      }
+      if (imgCode.length < 4) {
+        imgCodeError.html('请输入4位图形验证码');
+        return;
+      } else {
+        imgCodeError.html('');
+      }
+      config = getParams();
+      config.imgCode = imgCode;
+      config.pageId = pageId;
+      config.mobile = mobile;
+      config.type = 'register';
+      
+      btnSms.attr('disabled', true);
+      $.ajax({
+        url: BASE_URL + '/api/web/member/getPhoneCode',
+        type: 'post',
+        dataType: 'json',
+        data: config,
+        async: false,
+        success: function(data) {
+          if (data.code == 100) {
+            InterValObj = window.setInterval(setRemainTime, 1000);
+          } else {
+            clearInterval(InterValObj);
+            btnSms.removeAttr('disabled');
+            if (data.code != 100) {
+              if (data.code == 908) { // 图形验证码不正确
+                imgCodeError.html('请输入正确的图形验证码');
+              } else {
+                phoneCodeError.html(data.msg);
+                getImgCode();
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // 获取url参数
+    function getQueryString(name) {
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) return unescape(r[2]);
+      return null;
+    }
+
+    var mobileError = $('#mobileError'),
+        imgCodeError = $('#imgCodeError'),
+        phoneCodeError = $('#phoneCodeError'),
+        pwdError = $('#pwdError'),
+        alertContext = $('#alertContext');
+    // 开始注册
+    function register() {
+      var mobile = $('#mobile').val(),
+          imgCode = $('#imgCode').val(),
+          phoneCode = $('#phoneCode').val(),
+          passWord = $('#passWord').val();
+      var btnReg = $('#btnReg');
+
+      if (!mobileReg(mobile)) {
+        mobileError.html('请输入正确的手机号');
+        return;
+      } else {
+        mobileError.html('');
+      }
+      if (imgCode.length < 4) {
+        imgCodeError.html('请输入4位图形验证码');
+        return;
+      } else {
+        imgCodeError.html('');
+      }
+      if (!imgCodeReg(phoneCode)) {
+        phoneCodeError.html('请输入6位短信验证码');
+        return;
+      } else {
+        phoneCodeError.html('');
+      }
+      if (!pwdReg(passWord)) {
+        pwdError.html('密码为6-20位数字和字母组合');
+        return;
+      } else {
+        pwdError.html('');
+      }
+
+      var regData = getParams();
+      regData.pageType = 1;
+      regData.type = '1';
+      regData.mobile = mobile;
+      regData.password = passWord;
+      regData.phoneCode = phoneCode;
+      regData.imgCode = imgCode;
+      regData.pageId = pageId;
+      regData.inviterCode = getQueryString('referrerId');
+
+      $.ajax({
+        type: 'post',
+        url: BASE_URL + '/api/web/member/userRegister',
+        data: regData,
+        dataType: 'json',
+        success: function (res) {
+          btnReg.attr('disabled', true);
+          alertShow = true;
+          if (res.code == 100) {
+            mobileError.html('');
+            imgCodeError.html('');
+            phoneCodeError.html('');
+            pwdError.html('');
+            $('.phy-alert, .phy-mask').removeClass('dn');
+          } else {
+            pwdError.html(res.msg);
+            getImgCode();
+            btnReg.removeAttr('disabled');
+          }
+        }
+      });
+    }
+
+    //验证码倒计时
+    var wait = 60;
+    var InterValObj; // timer变量，控制时间
+    function setRemainTime() {
+      if (wait == 0) {
+        btnSms.removeAttr('disabled');
+        btnSms.text('获取验证码');
+        wait = 60;
+        window.clearInterval(InterValObj);// 停止计时器
+      } else {
+        btnSms.attr('disabled', true);
+        btnSms.text(wait + 's 后重获取');
+        wait--;
+      }
+    }
+
+    function closeAlert(){
+      $('.phy-alert, .phy-mask').addClass('dn');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+.help{
+    float: left;width: 928px; margin: 40px 0 40px 8px;padding: 0 24px;background:$cf;
+    .content{
+        width: 838px;height:100%;padding: 0 45px;font-size:$px16;color:$c6;
+
+        /* 帮助中心 start */
+        .help-list{
+            padding: 15px 0;
+
+            li{padding: 10px 0;font-size: $px16;color: $c3;}
+            .qa{padding: 10px 0 5px;cursor: pointer;}
+
+            /* 箭头 start */
+            .help-arrow{
+                display: $dib; width: 14px;height: 14px;margin-right: 10px;background: $cef6c2d url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJBAMAAAD9fXAdAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMAEe5mdyKZiETdzLuqVbbN4MsAAAAySURBVAjXY2BgbGBgYOB+CiTingGJTDsBBsbHTA4M7ArsCgxMDoyPGYAipxhuMDCEAACsAwhLtxTlmgAAAABJRU5ErkJggg==) center center no-repeat;
+            
+                &.down{background: $cef6c2d url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJBAMAAAD9fXAdAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMA7mYRdzOZiFXdzLuqIoehUZAAAAA0SURBVAjXY+hgYLjCoGfAkMnA6MAsxMAuwCLAwPyIsYCB4ZSiAQNDnBgDAwP3UyDBqsAAAKPnBp/9oszrAAAAAElFTkSuQmCC) center center no-repeat;}
+            }
+            /* 箭头 end */
+            .answer span{display: $db;margin-left: 24px;line-height: 2em;}
+
+            /* 银行限额列表 start */
+            .answer-tb{
+                thead tr{background-color: #f5b562;font-weight: bold; }
+                tr td{width: 120px;height: 34px;text-align: center;border: 1px solid #eee;}
+                &.gateway-tb{
+                    tr td{width: 80px;}
+                    tbody tr td:first-child {
+                        width: 120px;
+                    }
+
+                }
+
+            }
+            /* 银行限额列表 end */
+        }
+        /* 帮助中心 end */
+    }
+}

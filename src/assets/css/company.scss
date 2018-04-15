@@ -1,0 +1,242 @@
+.company{
+    float: left;width: 928px; margin: 40px 0 40px 8px;padding: 0 24px;background:$cf;
+    /*右侧返回标题 start*/
+    .return-title{
+        padding: 25px 0; width:100%; border-bottom: 2px solid $cf2;text-align: $ta-c;
+        .btn{display:$db;width: 70px;height: 34px;background:$cef6c2d;font-size:$px16;color: $cf;line-height: 34px;}
+        h3{font-size:20px;color: $c0;font-weight: 500;}
+        .inform{
+            padding: 18px 0;color: $c6;font-size:$px16;
+            div{display: $dib;padding: 0 14px;}
+        }
+    }
+    /*右侧返回标题 end*/
+
+    /*橙色及滑过效果 start*/
+    .orange{
+        color: $cef6c2d;
+        &:hover{text-decoration: underline;}
+    }
+    /*橙色及滑过效果 end*/
+
+    /* 联系我们 点击咨询 橙色及滑过效果 start */ 
+    .orange-contact{
+        color: $cef6c2d;
+        &:hover{text-decoration: underline;}
+    }
+    /* 联系我们 点击咨询 橙色及滑过效果 end */
+
+    .content{
+        width: 880px;height:100%;padding: 0 24px;font-size:$px14;color:$c6;
+        .content-title{float:left;padding: 36px 0 5px;font-size:20px;text-align:$ta-c;clear:both;border-bottom: 2px solid $cef6c2d;}
+        p{
+            clear:both;line-height: 30px;
+            .hollow-circle{display: $dib;width: 20px;height: 20px;margin: 0 18px 0 8px;border-radius: 20px;border: 1px solid #a1a1a1; text-align: $ta-c; font-size:$px16;line-height: 20px; }
+            .square{display: $dib;width: 12px; height: 12px; margin: 0 4px; background:$cef6c2d; }
+            .circular{display: $dib;width: 6px;height: 6px; margin: 2px 7px; background:$cef6c2d;border-radius: 6px;}
+        }
+        /*关于我们 start*/
+        .li-pt38{padding-top: 38px; clear:both;line-height: 30px;}
+        /*办公环境 start*/
+        .ambient{
+            float: left;width: 100%;height: 408px;margin: 38px 0 76px 0;
+            .left{width: 364px;height: 408px;margin-right: 12px;
+                .left-top{float: left;width: 364px;height: 220px;margin-bottom: 12px;background:url("/static/images/company/ambient_1.jpg") no-repeat;}
+                .left-bottom{float: left;width: 364px;height: 176px;
+                    .left-bottom-r{width: 176px;height: 176px;background:url("/static/images/company/ambient_2.jpg") no-repeat;}
+                    .left-bottom-l{width: 176px;height: 176px;background:url("/static/images/company/ambient_3.jpg") no-repeat;}
+                }
+            }
+            .middle{width: 250px;height: 408px;margin-right: 12px;background:url("/static/images/company/ambient_4.jpg") no-repeat;}
+            .right{
+                width: 200px;height: 408px;
+                .top-right{width: 198px; height: 198px;margin-bottom: 12px;background:url("/static/images/company/ambient_5.jpg") no-repeat;}
+                .bottom-right{width: 198px; height: 198px;background:url("/static/images/company/ambient_6.jpg") no-repeat;}
+            }
+        }
+        /*办公环境 end*/
+        /*关于我们 start*/
+
+        /*公司信息 start*/
+        .information{
+            padding-bottom: 100px;
+            .p-tb20{padding: 20px 0;}
+            /*基础信息 start*/
+            .basic{ padding: 35px 0;clear: both;
+                .basic-p{
+                    padding: 14px 0;font-size:$px16;
+                    .span-l{display:$db;float:left;width: 134px;padding-right: 30px;}
+                    .span-r{display:$db;float:left;width: 674px;}
+                }
+            }
+            /*基础信息 end*/
+
+            /*网站信息二维码 start*/
+            .website{
+                position: relative;
+                .w-client{
+                    position: absolute; top:100px; right:0;width: 495px; height: 150px;
+                    .layer-img{
+                        width: 130px;height: 130px;margin-left: 35px;
+                        img{width: 100%;}
+                    }
+                    .w-words{width: 130px; margin-left: 35px;padding-top:24px; text-align:$ta-c;font-size:$px16;}
+                }
+            }
+            /*网站信息二维码 end*/
+
+            /*组织框架 start*/
+            // .framework{clear: both;width: 690px;height: 432px; padding:50px 74px;background:url("/static/images/company/framework.png") no-repeat 74px 50px;}
+            .framework{clear: both;width: 876px;height: 458px; padding:50px 0;background:url("/static/images/company/framework.png") no-repeat 0 50px;}
+            /*组织框架 end*/
+
+            /*股东结构start*/
+            .structure{
+                // clear: both;width: 778px;height: 176px;padding:50px 30px;background:url("/static/images/company/structure.png") no-repeat 30px 50px;
+                width: 780px;margin: 0 auto; border: 1px solid $c6; line-height: 58px; margin: 50px;
+                th,td{border-left: 1px solid $c6; border-bottom: 1px solid $c6;text-align:$ta-c; color:$c6; font-size: $px14;}
+                th{font-weight: normal;}
+                th:nth-of-type(1){width: 108px;}
+                th:nth-of-type(2){width: 320px;}
+                th:nth-of-type(3){width: 194px;}
+                th:nth-of-type(4){width: 158px;}
+                thead tr{width: 780px;}
+            }
+            /*股东结构end*/
+
+            /*团队介绍 start*/
+            .team{
+                clear: both;width: 774px;height: 228px; padding: 50px 32px 0;
+                .team-img{width: 166px;height: 228px;background:#f4f4f4;}
+                .words{
+                    padding-left: 50px;width: 558px;
+                    .words-h{
+                        line-height: 42px;
+                        span{padding-left: 26px;}
+                    }
+                    .words-p{font-size:$px14;}
+                }
+            }
+            /*团队介绍 end*/
+
+            /*公司证照 start*/
+            .licence{ padding: 50px 20px;clear: both;
+                .licence-l{width: 374px;height: 556px;background:url("/static/images/company/licence_1.jpg") no-repeat;}
+                .licence-r{
+                    width:452px;height: 556px; padding-left: 12px;
+                    .licence-rt{width: 452px;height: 272px; margin-bottom: 12px;background:url("/static/images/company/licence_2.jpg") no-repeat;}
+                    .licence-rb{width: 452px;height: 272px; background:url("/static/images/company/licence_3.jpg") no-repeat;}
+                }
+            }
+            /*公司证照 end*/
+        }
+        /*公司信息 end*/
+
+        /*平台公告start*/
+         .notice{
+            padding-top: 24px;
+            li{line-height: 46px;
+                a{color:$c6;
+                    &:hover{color: $c0;}
+                }
+                span{float: right; text-align: $ta-c;}
+            }
+        }
+        /*平台公告end*/
+
+        /*公司荣誉start*/
+        .homor{
+            padding: 80px 0;
+            ul{
+                height: 100%; padding:0 124px 60px;
+                
+                li{
+                    float: left; width: 230px;
+                    &:nth-child(1){ padding-right: 172px; }
+                    .l1-img{width: 150px;height: 202px; padding: 0 40px;background: url("/static/images/company/homor-risk.jpg") no-repeat 40px 0;}
+                    .r1-img{width: 142px; height: 190px; padding: 6px 44px; background: url("/static/images/company/homor-science.jpg") no-repeat 44px 6px;}
+                    .l2-img{width: 230px;height: 176px; background: url("/static/images/company/homor-innovate.jpg") no-repeat;}
+                    p{ text-align: center; line-height: 94px;color: #666; font-size: 16px;}
+                }
+            }
+        }
+        /*公司荣誉end*/ 
+
+        /*媒体报道 start*/
+        .media-coverage{
+            width: 100%;padding: 25px 0;color:$c6;border-bottom:1px solid #d7d7d7;
+            &.no-border{border-bottom:0}
+            .media-img{
+                width: 246px;height: 138px;margin-right: 34px;
+                img{width: 246px;height: 138px;}
+            }
+            .media-words{
+                width: 558px;
+                a{
+                    color:$c6;font-size:$px16;line-height: 42px;font-weight: 600;
+                    &:hover{color: $c0;}
+                }
+                p{font-size:$px14;line-height: 28px;}
+                span{display:$dib;font-size:$px14;padding-top: 22px;}
+            }
+        }
+        /*媒体报道 end*/
+
+        /*company模块下详情页 start*/
+        .details{
+            padding: 40px 0 100px 0;
+            
+            p{
+                padding-bottom: 40px; text-indent: 32px;
+                p,img{display: block;max-width:100% !important;margin-left: auto !important;margin-right: auto !important;padding-left: 0 !important;padding-right: 0 !important; }
+                img{text-align: center;}
+            }
+        }
+        /*company模块下详情页 end*/
+
+        /*联系我们 start*/
+        .contact-us{
+            .map{width: 880px; height: 430px; margin:25px 0;background:url("/static/images/company/map.jpg") no-repeat;}
+            .client{
+                padding: 40px 0 140px 0;
+                /*APP客户端下载*/
+                .app{width: 150px;height: 150px; margin-right:100px; background:url("/static/images/company/app.png") no-repeat;}
+                /*关注订阅号*/
+                .subscribe{width: 150px;height: 150px; margin-right:100px;background:url("/static/images/company/subscribe.png") no-repeat;}
+                /*关注服务号*/
+                .service{width: 150px;height: 150px;background:url("/static/images/company/service.png") no-repeat;}
+
+                .words{width: 150px; margin-right: 100px;padding-top:24px; text-align:$ta-c;font-size:$px16;}
+            }
+        }
+        /*联系我们 end*/
+    }
+
+    /*合作伙伴 start*/
+    .partners{
+        width: 928px; padding: 40px 0;border-bottom:1px solid #eee;
+        .partners-img{width: 300px;height: 150px; border:1px solid #eee;border-radius: 6px;}
+            .img-1{ background:url("/static/images/company/partners-img1.png") no-repeat center center;}
+            .img-2{ background:url("/static/images/company/partners-img2.png") no-repeat center center;}
+            .img-3{ background:url("/static/images/company/partners-img3.png") no-repeat center center;}
+            .img-4{ background:url("/static/images/company/partners-img4.png") no-repeat center center;}
+            .img-5{ background:url("/static/images/company/partners-img5.png") no-repeat center center;}
+            .img-6{ background:url("/static/images/company/partners-img6.png") no-repeat center center;}
+            .img-7{ background:url("/static/images/company/partners-img7.png") no-repeat center center;}
+        .partners-words{
+            width: 600px;padding-left: 26px;
+            h2{font-size: $px18; color: $c3;}
+            p{padding-top: $px16;font-size: $px14; color: $c6; line-height: 24px;}
+        }
+    }
+    /*合作伙伴 end*/
+
+    /* 文章详情的上一篇下一篇 */
+    .neighbor{
+        margin:30px 0 50px;padding-top: 13px;padding-left: 50px;border-top: 1px solid #e7e7e7;
+        a{
+            display: block;margin-top: 12px;color: #989898;font-size: $px14;
+            &:hover{color: #707070;}
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公告详情</title>
+    <meta name="keywords" content="金谷财行,产业链金融,产业链平台,金谷财行官网">
+    <meta name="description" content="金谷财行官方网站提供金谷财行最新动态,产品详情.金谷财行是专业的产业链金融平台,注册资本8000万,以云谷相关产业链上下游客户为中心,定位产业链生态圈,服务于实体产业.金谷财行-专业的产业链金融平台.">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/flexible.js"></script>
+    <script src="js/less.min.js"></script>
+
+    <style>
+        article{padding: 0.666667rem 0.533333rem;}
+        .h1{font-size: 0.4rem;color: #333;}
+        .h3{padding: 0.4rem 0 0.666667rem;font-size: 0.32rem;color: #999;text-align: center;}
+        .context{font-size: 0.32rem;color: #999;}
+        .context img{width: 100% !important;}
+    </style>
+</head>
+<body>
+    <article>
+        <h1 class="h1" id="title"></h1>
+        <h3 class="h3" id="dateTime"></h3>
+        <p class="context" id="context">
+
+        </p>
+    </article>
+<script src="js/zepto.min.js"></script>
+<script src="../js/config.js"></script>
+<script>
+
+    //    初始化数据
+    $(function () {
+        init();
+    });
+    function init () {
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            data: {id: $.trim(GetQueryString('id'))},
+            url: BASE_URL + '/api/web/category/getArticleById',
+            success: function (data) {
+                data = data.data;
+                $('#title').html(data.title);
+                $('#dateTime').html(data.createDate);
+                $('#context').html(data.content);
+            }
+        });
+    }
+
+    function GetQueryString (name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+</script>
+</body>
+</html>

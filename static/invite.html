@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>欢迎注册-金谷财行</title>
+    <meta name="keywords" content="欢迎注册,金谷财行注册" />
+    <meta name="description" content="欢迎来到金谷财行注册页面,请您按照页面提示输入手机号,密码和金谷财行官网给您发送的验证码,完成注册。金谷财行-专业的产业链金融平台。" />
+    <link href="/static/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="/static/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="/static/H5/css/reset.css">
+    <style>
+        body{font-family: 'Microsoft Yahei', '宋体', Arial, Helvetica, sans-serif;}
+        .dn{display: none;}
+        .wrap {width: 1200px;margin: 0 auto}
+        .rl_header .wrap {height: 75px;overflow: hidden}
+        .rl_header {background: #fff;}
+        .fn-clear {zoom: 1;}
+        .fn-right {float: right;}
+        .rl_header .tel {margin-top: 18px;}
+        i{font-style: normal;}
+        .w1200{width: 1200px;margin:0 auto;padding:20px 0 0;background-color: #f5f5f5;}
+        .w1200reg{width: 1200px;margin:0 auto;}
+        .banner{height: 502px;margin:0 auto;background: #fff url(/static/H5/img/invitereginster/banner.jpg) center center no-repeat;}
+        .reg{float: right;margin: 30px auto;padding:20px 40px;background-color: #fff;border-radius: 5px;}
+        .form-group{margin:24px 0;position: relative;}
+        .form-group input{width: 263px;height: 42px;padding-left:15px;font-size: 14px;color: #999;border:1px solid #eee;border-radius: 5px;outline: none;background-color: #fff;}
+        .form-group input:hover{border:1px solid #feb71f;}
+        .form-group input.error{margin-top: 0;}
+        .form-group input.valiCode{width: 128px;}
+        .btn-vali{width: 110px;height: 44px;margin-left: 12px;color:#fff;font-size: 14px;background-color: #feb71f;border:0; border-radius: 5px;}
+        .btn-vali:disabled{background-color: #bbb;border-color:#bbb;}
+        .protocol{cursor: pointer;}
+        .form-group input[type=checkbox]{display: none;}
+        .icon-right{display: inline-block;float: left;width: 14px;height: 14px;margin-right:10px;text-align: center;background-color: #feb71f;cursor: pointer;}
+        .icon-right img{display: block;margin: 2px 1px;}
+        .form-group input.btn-reg{width: 280px;height: 44px;padding:0;font-size: 18px;color: #fff;background-color: #feb71f;border:0; border-radius: 5px;box-shadow: 0 4px 0 #fea21f;}
+        .form-group input.btn-reg:hover{background-color: #fea21f;}
+        .form-group input.btn-reg:disabled{background-color: #bbb;border-color:#bbb;box-shadow: 0 4px 0 #bbb;}
+        .form-group input.btn-reg:disabled.success{background-color: #feb71f;color:#fff;border-color:#feb71f;box-shadow: 0 4px 0 #fea21f;}
+        .protocol-url{color: #c99d86;font-size: 12px;}
+        .bgc-arallelogram{float: left;display: inline-block;width: 74px;height: 24px;margin-right:20px;line-height: 24px;color: #fff;text-align: center;font-size: 12px; background: #fff url(/static/H5/img/invitereginster/icon-arallelogram.png) center center no-repeat;}
+        .item{width:1200px;margin: 20px auto; padding: 15px 0;background-color: #fff;clear: both;}
+        h3{padding:4px 60px 20px; text-align: left; border-bottom: 1px solid #eee;line-height: 24px;font-size: 18px;}
+        h3.pt30{padding-top: 24px;}
+        .item ul{padding: 0 60px;clear: both;overflow: hidden;}
+        .item ul li{float: left;width: 140px;margin:20px 20px 20px 0;}
+        .item ul li.ml20{margin-left: 60px;}
+        .item ul li.fr{float: right;width: 180px;}
+        .item ul li.bd{padding:0 60px;border-left:1px solid #eee;border-right:1px solid #eee;}
+        .item .p1{padding-top:5px;color: #fc3353;font-size: 40px;font-weight: bold;}
+        .item .p2{padding-top:14px;padding-bottom:1px;color: #333;font-size: 30px;font-weight: bold;}
+        .item .p3{padding-top:23px;padding-bottom:2px;font-size: 22px;font-weight: bold;}
+        .btn{display: block;width: 200px;height: 54px;margin:20px auto 0;text-align: center;color: #fff;font-size: 20px;line-height: 54px; background-color: #ff6969; border-radius: 5px;}
+        .btn:hover{background-color:#f95656;}
+        .superiority{margin: 10px auto;padding: 30px 60px;background-color: #fff;text-align: center;}
+        .tips{padding: 30px 0;text-align: center; color: #999;font-size: 14px;background-color: #f5f5f5;}
+        .bgcf5{background-color: #f5f5f5;}
+        .about{margin-top: 20px;padding-bottom:50px; background-color: #fff;clear: both;}
+        .about p{padding:8px 60px;line-height: 1.8rem;font-size: 16px;}
+        .fz24{font-size: 24px;}
+        .fz22{font-size: 22px;}
+        .c9{padding:10px 0;color: #999;font-size: 14px;}
+        .imgDn img{display: none;}
+        .error{display: block;margin-top:10px;color: #fc3353;font-size: 12px;height: 10px;}
+        .btn-vali.posa{position: absolute;right:0;top:0;}
+        .about p.pt40{padding-top: 40px;}
+        .err{padding-top: 10px;color:#fc3353;display: block;font-size: 12px;height: 10px;}
+        .dn{display: none;}
+        .eye{position: absolute;top:1px;right:1px;width: 30px;height: 28px;padding:13px 10px 0 0;background:#fff url(/static/H5/img/invitereginster/eye-close.jpg) center center no-repeat;background-size: 60%;border-radius: 5px;}
+        .eye.open{background:#fff url(/static/H5/img/invitereginster/eye.jpg) center center no-repeat;background-size: 60%;}
+        .rl_footer{margin: 0 auto;}
+        .rl_footer .copyright {text-align: center;line-height: 50px;background: #1f1f1f;font-size: 14px;color: #b2b2b2;}
+        #mask_bg {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);opacity: 0.5;filter: alpha(opacity=50);display: none;z-index: 98;}
+        .box1 {display: none;width: 980px;height: 580px;left: 50%;margin-left: -500px;top: 50%;margin-top: -300px;z-index: 100;background-color: #fff;border: 6px #dfdfdf solid;padding: 20px;border-radius: 10px;}
+        .sl_content div {line-height: 25px;font-size: 13px;text-indent: 10px;padding: 0 30px;height: 400px;overflow: auto}
+        .box1 h4 {height: 52px;font-size: 14px;position: relative;line-height: 52px;color: #222222;font-weight: normal;border-bottom: #d7d7d7 solid 1px}
+        .box1 h5{text-align: center;padding: 30px 0; }
+        #isApp{display: none; }
+        @media screen and (max-width: 750px) {
+            #isApp{display: block;}
+        }
+    </style>
+
+</head>
+
+<body class="bgcf5">
+    <!-- 登录&注册通用头部开始 -->
+    <div class="rl_header">
+        <div class="wrap fn-clear">
+            <div style=" float: left; padding-top: 15px;"><a href="/"><img src="images/public/logo.png"></a></div>
+            <div class="tel fn-right"><img src="/static/H5/img/invitereginster/rl_tel1.png"></div>
+        </div>
+    </div>
+    <!-- 登录&注册通用头部结束 -->
+
+    <div class="banner">
+        <div class="w1200reg">
+            <div class="reg" id="reg">
+                <form method="post" id="myForm">
+                    <div class="form-group"><input type="text" id="phone" name="phone" required placeholder="请输入领取手机号" maxlength="11"/>
+                        <div class="err dn" id="phoneEr"></div></div>
+                    <div class="form-group">
+                        <input type="text" id="valiCode" name="valiCode" maxlength="6" required class="valiCode" placeholder="短信验证码"/>
+                        <div id="valiCodeEr" class="err dn"></div>
+                        <button class="btn-vali posa" id="getCode">获取验证码</button>
+                    </div>
+                    <div class="form-group"><input type="password" id="pwd" name="pwd" required placeholder="密码由6-20位数字、字母、字符组成" maxlength="20" /><span class="eye"></span></div>
+                    <div class="form-group"><input type="checkbox" checked="checked" id="protocol" name="protocol"/><label class="protocol" for="protocol"><span class="icon-right"><img id="iconRight" src="/static/H5/img/invitereginster/icon-right.png" alt=""></span>我已阅读并同意</label><a id="zcxy" href="javascript:;" class="protocol-url">《金谷财行注册协议》</a>
+                        <div class="err dn" id="protocolEr"></div>
+                    </div>
+                    <div class="form-group"><input type="submit" id="btnReg" class="btn-reg" value="注册领福利"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="w1200">
+        <p class="superiority"><img src="/static/H5/img/invitereginster/superiority.jpg" alt="优势"></p>
+
+        <div id="newFlow" class="item">
+            <h3><span class="bgc-arallelogram">新手专享</span><span id="rookieMoneyflowName"></span></h3>
+            <ul>
+                <li>
+                    <p class="p1"><span id="rookieMoneyflowReturnrate"></span><i class="fz24">%</i></p>
+                    <p class="c9">借款利率</p>
+                </li>
+                <li class="bd ml20">
+                    <p class="p2" ><span id="rookieMoneyflowMinamount"></span><i class="fz22">元</i></p>
+                    <p class="c9">起投金额</p>
+                </li>
+                <li class="ml20">
+                    <p class="p3" id="rookieFxType"></p>
+                    <p class="c9">收益分配方式</p>
+                </li>
+                <li class="fr">
+                    <a href="#reg" class="btn" >立即参与</a>
+                </li>
+            </ul>
+        </div>
+        <div id="dataList">
+          <!-- <div class="item">
+              <h3><span class="bgc-arallelogram">推荐标的</span>${ygbMoneyflow.moneyflowName}</h3>
+              <ul>
+                  <li>
+                      <p class="p1">${ygbMoneyflow.moneyflowReturnrate}<i class="fz24">%</i></p>
+                      <p class="c9">借款利率</p>
+                  </li>
+                  <li class="bd ml20">
+                      <p class="p2">${ygbMoneyflow.moneyflowMinamount}<i class="fz22">元</i></p>
+                      <p class="c9">起投金额</p>
+                  </li>
+                  <li class="ml20">
+                      <p class="p3">${ygbMoneyflow.fxType}</p>
+                      <p class="c9">收益分配方式</p>
+                  </li>
+                  <li class="fr">
+                      <a href="#reg" class="btn">立即参与</a>
+                  </li>
+              </ul>
+          </div> -->
+        </div>
+        <div class="about">
+            <h3 class="pt30"><span class="bgc-arallelogram">选择金谷</span>关于金谷财行</h3>
+            <p class="pt40">作为中国云谷科技集团（以下简称“中国云谷”）协作金融板块中专注于产业链金融的互联网金融平台，北京金谷财行投资管理有限公司注册资本2亿元，以中国云谷产业园区相关产业链上下游客户为中心，主要服务于三方资产端和财富端市场。金谷财行响应国家产业政策，为中国云谷旗下数十个特色产业园区的入园企业及其上下游供应商、分销商提供金融信息服务，旨在为其破解融资难、融资贵的问题，造福当地经济。</p>
+            <p>中国云谷是特色产业小镇运营的领跑者，也是国内唯一以“特色产业”理念规划、开发、投资、建设、运营产业园区和产业小镇的集团公司。2016年获得中国小镇经济创新奖。其与洪泰基金共建的“洪泰云谷创新空间”享誉业内。各地云谷产业园区主要采取与政府合作运营模式，园区入园企业多为当地政府重点扶持企业。这些入园企业生产运营赖以维系的固定资产多集中于云谷产业园区，金谷财行正是为它们提供金融信息服务。企业正规、政策支持，为金谷财行打造了优质安全的资产基础。</p>
+        </div>
+
+        <p class="tips">市场有风险，决策需谨慎。</p>
+    </div>
+
+    <!-- 登录&注册通用脚部开始 -->
+    <div class="rl_footer">
+        <div class="copyright">京ICP备16007841号-5　　Copyright @ 2017 北京金谷财行投资管理有限公司     保留一切权利</div>
+    </div>
+    <!-- 登录&注册通用脚部结束 -->
+
+    <!-- 注册页面内容开始 -->
+    <div id="mask_bg"></div>
+    <div class="box1" style="position:fixed">
+      <h4>金谷财行注册协议<a href="javascript:void(0)" class="close1"></a></h4>
+      <div class="sl_content">
+        <h5>金谷财行注册协议</h5>
+        <div>
+            <p>本协议是您与金谷财行网站（简称“本站”，网址：www.jingubank.com）所有者（以下简称为“金谷财行”）之间就金谷财行网站服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击“同意以下协议，提交”按钮后，本协议即构成对双方有约束力的法律文件。</p>
+            <h6>一、总则</h6>
+            <p>1、金谷财行网站（以下简称“金谷财行”）是一家创新型的互联网金融平台，所有权和运营权归北京金谷财行投资管理有限公司（以下简称“金谷财行公司”）。</p>
+            <p>2、 金谷财行公司及金谷财行平台（www.jingubank.com）依据本协议的约定为金谷财行用户（以下简称“用户”）提供服务，本协议在用户和金谷财行之间具有合同上的法律效力。</p>
+            <p>3、本协议可由金谷财行根据具体情况进行更新，用户应当及时关注，一旦本服务协议的内容发生变动，金谷财行将通过本网站公布最新的服务协议，不再向用户作个别通知。</p>
+            <p>4、本站的通知、公告、声明或其它类似内容是本协议的一部分。</p>
+            <p>5、用户不同意金谷财行对本服务协议所做修改的，有权停止使用金谷财行服务。如果用户继续使用金谷财行服务，则视为用户接受金谷财行对本服务协议所做的修改，并遵照修改后的协议执行。
+            <p>6、用户勾选位于注册页面下方的"我同意注册协议"选项并按照本网站的流程成功注册后，本协议即产生法律效力。</p>
+            </p>
+            <h6>二、注册用户身份限制及信息使用规则</h6>
+            <p>1、 金谷财行用户，必须是年满18周岁、拥有中华人民共和国国籍、具有完全民事权利能力和民事行为能力、能够独立承担民事责任的自然人。</p>
+            <p>2、用户有义务提供有效的联系方式，包括但不限于手机号码、固定电话号码、通讯地址、常用电子邮箱、紧急联系人信息等。联系方式发生变更时，应在3日内进行更新。因用户未提供有效联系方式或未及时更新，导致金谷财行未能提供服务时，造成的损失及法律后果，由用户自行承担。</p>
+            <p>3、用户同意，金谷财行可从公开及其他途径收集用户的额外信息，以更好地掌握用户的实际情况，为用户量身订做合适的服务。</p>
+            <p>4、金谷财行对于用户提供的、金谷财行自行收集的及其他用户个人信息享有使用和披露的权利。金谷财行基于履行协议、提供服务、解决争议、保障交易安全等目的使用用户个人信息资料时，无需告知用户。</p>
+            <p>5、用户有义务确保个人资料信息的准确性、真实性、完整性和有效性，并承诺对个人资料信息及时进行更新。若金谷财行经判断、核查、认定用户资料存在错误、虚假、过时等情形的，金谷财行有权终止用户账户。如因违背上述义务，造成金谷财行或金谷财行其他使用方损失的，用户将承担全部赔偿责任。</p>
+            <p>6、为避免用户通过金谷财行平台从事违规违法活动，保护金谷财行及其他用户的合法权益，金谷财行有权通过人工或自动程序对用户信息进行审核及评价。</p>
+            <p>7、金谷财行采用行业标准和惯例保护用户的个人信息。金谷财行不会将用户信息恶意出售或免费共享给任何第三方。鉴于技术限制，金谷财行无法确保用户的个人信息完全不被泄露。</p>
+            <p>8、金谷财行有义务根据有关法律要求向司法机关和政府部门提供用户的个人资料。</p>
+            <p>9、若用户未能按照其与金谷财行及金谷财行其他用户签订的协议等法律文本的约定履行应尽义务，金谷财行有权披露用户个人信息及违约事实。金谷财行有权将上述信息写入网站黑名单，且与任何第三方进行数据共享，以供网站及第三方审核、催收之用。由此给用户造成的任何损失，金谷财行不承担法律责任。</p>
+            <h6>三、用户账户安全及守法承诺</h6>
+            <p>1、 用户账户是其在金谷财行的唯一标识。用户承诺妥善保管其账号密码，不将个人账号信息泄露给其他任何人。</p>
+            <p>2、 用户将对利用其账户及密码所进行的一切行为及言论，负完全的责任，并同意以下事项：
+              <br /> （1）用户不对其他任何人泄露账户或密码，亦不可使用其他任何人的账户或密码。因黑客、病毒或用户的保管疏忽等非金谷财行原因导致用户的账户遭他人非法使用的，金谷财行不承担任何责任。
+              <br /> （2）金谷财行通过用户的账户及密码来识别用户的指令，用户确认，使用其账户和密码登录后在金谷财行的一切行为均代表用户本人。用户账户操作所产生的电子信息记录均为用户行为的有效凭据，并由用户本人承担由此产生的全部责任。
+              <br /> （3）冒用他人账户及密码的，金谷财行及其合法授权主体保留追究实际使用人赔偿责任的权利。
+              <br /> （4）用户应根据金谷财行的相关规则以及金谷财行平台的相关提示创建一个安全密码，应避免选择过于明显的单词或日期，比如用户的生日或者姓名、昵称等。
+            </p>
+            <p>3、用户如发现有第三人冒用或盗用用户账号及密码，或其他任何未经合法授权使用的情形，应立即以有效方式通知金谷财行，要求金谷财行暂停相关服务，否则由此产生的一切责任由用户本人承担。同时，用户理解金谷财行对用户的请求采取行动需要合理期限，在此之前，金谷财行对第三人使用该服务所导致的损失不承担任何责任。</p>
+            <p>4、用户决定不再使用其账户时，应首先清偿所有应付款项（包括但不限于借款本金、利息、逾期利息、违约金、服务费、管理费等），再将用户账户中的可用款项（如有）全部取现或者向金谷财行发出有效的支付指令，并向金谷财行申请注销该用户账户，经金谷财行审核同意后正式注销用户账户。</p>
+            <p>5、用户死亡或被宣告死亡的，其在本协议项下的各项权利义务由其继承人承担。若用户丧失全部或部分民事权利能力或民事行为能力，金谷财行或其授权的主体有权根据有效法律文书（包括但不限于生效的法院判决、仲裁书等）或其法定监护人的指示处置与用户账户相关的款项。</p>
+            <p>6、金谷财行有权基于单方独立判断，在其认为可能发生危害交易安全等情形时，不经通知而先行暂停、中断或终止向用户提供本协议项下的全部或部分用户服务（包括收费服务），并将注册资料移除或删除，且无需对用户或任何第三方承担任何责任。具体情形包括但不限于：
+              <br
+              /> （1）金谷财行审核、确认用户提供的个人资料存在虚假、伪造、失效或不完整等情形的；
+              <br /> （2）金谷财行发现异常交易或有疑义或存在违法之虞时；
+              <br /> （3）金谷财行认为用户账户涉嫌洗钱、套现、被冒用或其他类似之情形；
+              <br /> （4）金谷财行认为用户已经违反本协议中规定的相关规则的；
+              <br /> （5）用户在使用金谷财行收费服务时未按规定向金谷财行支付相应的服务费用；
+              <br /> （6）用户账户已连续一年未实际使用且账户中余额为零；
+              <br /> （7）金谷财行基于交易安全等原因，根据其单独判断需先行暂停、中断或终止向用户提供本协议项下的全部或部分用户服务（包括收费服务），并将注册资料移除或删除的其他情形。
+            </p>
+            <p>7、 用户同意并保证不得利用金谷财行服务从事侵害他人权益或违法之行为，若有违反者应负所有法律责任。具体行为包括但不限于： （1）违反依法律或合约所应负之保密义务；
+              <br /> （2）冒用他人名义使用金谷财行服务；
+              <br /> （3）侵害他人名誉、隐私权、商业秘密、商标权、著作权、专利权、其他知识产权及其他权益；
+              <br /> （4）从事任何不法交易行为，如贩卖枪支、毒品、禁药、盗版软件或其他违禁物；
+              <br /> （5）提供赌博资讯或以任何方式引诱他人参与赌博；
+              <br /> （6）涉嫌洗钱、套现或进行传销活动的；
+              <br /> （7）利用金谷财行服务上传、展示或传播虚假的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、庸俗淫秽的或其他任何非法的信息资料；
+              <br /> （8）从事任何可能含有电脑病毒或是可能侵害金谷财行服务系統、资料等行为；
+              <br /> （9）利用金谷财行服务系统进行可能对互联网或移动网正常运转造成不利影响之行为；
+              <br /> （10）侵犯金谷财行的商业利益，包括但不限于发布非经金谷财行许可的商业广告；
+              <br /> （11）其他金谷财行有正当理由认为不适当之行为。
+            </p>
+            <p>8、用户同意，由于用户违反本协议，或违反通过援引并入本协议并成为本协议一部分的文件，或由于用户使用金谷财行服务违反了任何法律，或侵犯第三方的权利，而造成任何第三方进行或发起的任何补偿申请或要求（包括律师费用），用户承担全部责任。</p>
+            <p>9、 金谷财行保有依其单独判断删除金谷财行平台内各类不符合法律政策或不真实、不适当的信息内容而无须通知用户的权利，并无需承担任何责任。</p>
+            <p>10、 若用户未遵守以上规定的，金谷财行有权作出独立判断并采取暂停或关闭用户账户等措施，而无需承担任何责任。</p>
+            <h6>四、服务内容</h6>
+            <p>1、 金谷财行为用户提供的服务内容包括但不限于以下内容： （1）信息发布服务。用户承诺，其通过金谷财行上传或发布的任何资料信息均真实有效。如因违背上述承诺，造成的任何法律后果，用户都将自行承担责任。
+              <br /> （2）信用咨询及评估服务。用户同意，金谷财行可通过公开或其他途径搜集用户的必要信息，以了解用户的实际情况。金谷财行有权根据实际情况对用户信息进行评价以供其他用户参考。
+              <br /> （3）交易管理服务。金谷财行提供的各种交易信息及资料仅供用户参考，用户应考虑实际情况独立判断并做出交易决策。用户应知悉投资风险，交易发生后产生的一切风险均由用户自行承担。此外，如果金谷财行发现了因系统故障或其他任何原因导致的处理错误，金谷财行都有权纠正该错误，用户有义务根据金谷财行有关纠正错误的通知进行相应操作。
+              <br /> （4）合同管理服务。金谷财行交易时订立的合同采用电子合同方式。用户绑定的电子邮箱为金谷财行发送电子合同及其他重要通知、信息的接收邮箱。用户承诺，注册成功后会尽快绑定验证电子邮箱并密切关注邮箱信息。任何信息从金谷财行发出后，即视为已告知用户，用户不得以任何理由否认合同的效力或拒绝履行合同中规定的义务。
+            </p>
+            <p>2、 用户接受的具体服务内容以金谷财行当时实际提供的为准。</p>
+            <p>3、 金谷财行为用户提供的部分服务需要用户完成身份认证才能使用的，因用户未完成身份认证而无法享受服务的，金谷财行不承担任何责任。</p>
+            <h6>五、服务费用</h6>
+            <p>1、 用户使用金谷财行服务时，金谷财行有权向用户收取相关服务费用。各项费用详见金谷财行服务收费说明。金谷财行保留单方面制定及调整服务费用的权利。</p>
+            <p>2、 用户在使用金谷财行服务过程中可能需要向第三方或其他机构支付一定费用的，具体收费标准详见金谷财行服务收费说明。</p>
+            </dd>
+            <h6>六、风险提示</h6>
+            <p>1、 金谷财行不对任何用户的任何交易提供任何明示或默认的保证。用户应知悉交易存在的风险，并在独立判断后作出交易决策。交易产生的风险由用户自行承担。</p>
+            <p>2、 金谷财行不能对用户发布的信息进行控制，金谷财行没有义务为该信息承担证明义务。金谷财行不能完全保证平台内容的真实性、准确性和完整性，所有信息仅供参考。</p>
+            <p>3、 用户了解并认可，任何通过金谷财行进行的交易并不能避免以下风险的产生，金谷财行不能也没有义务为如下风险负责： （1）违约风险：因其他交易方无力或无意愿按时足额履约，用户有可能遭受损失；
+              <br /> （2）利率风险：市场利率变化可能对购买或持有产品的实际收益产生影响；
+              <br /> （3）因用户的过错导致的任何损失，该过错包括但不限于：决策失误、操作不当、遗忘或泄露密码、密码被他人破解、用户使用的计算机系统被第三方侵入、用户委托他人代理交易时他人恶意或不当操作而造成的损失；
+              <br /> （4）宏观经济风险：因宏观经济形势变化，可能引起价格等方面的异常波动，用户有可能遭受损失；
+              <br /> （5）政策风险：有关法律、法规及相关政策、规则发生变化，可能引起价格等方面异常波动，用户有可能遭受损失；
+              <br /> （6）不可抗力因素导致的风险。
+            </p>
+            <p>4、 金谷财行合作机构提供的服务内容由该合作单位负责。用户享受相关服务时产生的争议、纠纷及损失，金谷财行不承担任何责任。</p>
+            <p>5、 用户由金谷财行任何工作人员处取得的建议、说明，均不构成金谷财行对服务的承诺和保证。由此产生的法律后果，金谷财行不承担任何责任。</p>
+            <h6>七、除外责任</h6>
+            <p>1、 用户同意：其在金谷财行上按交易流程所确认的状态，将成为金谷财行进行相关操作唯一依据。因用户未能及时对交易状态进行修改、确认而造成的损失由用户自行负责，金谷财行不承担任何责任。</p>
+            <p>2、 因用户自身的原因导致的任何损失或责任，由用户自行负责，金谷财行不承担责任。金谷财行不承担责任的情形包括但不限于： （1）用户未按照本协议或金谷财行平台不时公布的任何规则进行操作导致的任何损失或责任；
+              <br /> （2）因用户使用的银行卡的原因导致的损失或责任，包括用户使用未经认证的银行卡或使用非用户本人的银行卡或使用信用卡，用户的银行卡被冻结、挂失等导致的任何损失或责任；
+              <br /> （3）用户向金谷财行发送的指令信息不明确、存在歧义、不完整等导致的任何损失或责任；
+              <br /> （4）用户账户内余额不足导致的任何损失或责任；
+              <br /> （5）其他因用户原因导致的任何损失或责任。
+            </p>
+            <p>3、 在任何情况下，对于用户使用金谷财行服务过程中涉及由第三方提供相关服务的责任由该第三方承担，金谷财行不承担该等责任。金谷财行不承担责任的情形包括但不限于：
+              <br /> （1）因银行、第三方支付机构等第三方未按照用户或金谷财行指令进行操作引起的任何损失或责任；
+              <br /> （2）因银行、第三方支付机构等第三方原因导致资金未能及时到账或未能到账引起的任何损失或责任；
+              <br /> （3）因银行、第三方支付机构等第三方对交易限额或次数等方面的限制而引起的任何损失或责任；
+              <br /> （4）因其他第三方的行为或原因导致的任何损失或责任。
+            </p>
+            <p>4、 基于互联网的特殊性，金谷财行不承诺服务不会中断，也不承诺服务的安全性，用户对此应理解并确认。由于系统维护、设备故障、黑客攻击及其他不可抗力的影响，而导致用户无法正常使用相关服务时，金谷财行不承担任何责任。</p>
+            <h6>八、知识产权保护</h6>
+            <p>1、金谷财行上所有内容的知识产权均由金谷财行及金谷财行公司依法拥有，包括但不限于文本、数据、文章、图片、资讯、平台架构、网页设计等。未经金谷财行或其权利人书面同意，任何人不得擅自使用、修改、复制、公开发布金谷财行程序或内容。</p>
+            <p>2、 尊重知识产权是用户应尽的义务，如有违反，用户应对金谷财行承担损害赔偿等法律责任。</p>
+            <h6>九、其他条款</h6>
+            <p>1、本协议由用户与金谷财行共同签订，适用于用户在金谷财行的一切活动。协议内容包括但不限于协议正文条款，已发布的或将来可能发布的各类规则、通知、公告、声明等，都应视为本协议不可分割的一部分，与协议正文条款享有同等法律效力。</p>
+            <p>2、本协议不涉及金谷财行用户间产生的法律关系及法律纠纷。但用户应同意全面接受金谷财行与其他用户签订的任何协议，并承诺按照该协议承担相应的责任和义务。用户间的纠纷及争议需要金谷财行提供相应资料时，金谷财行仅接受来自司法机关的请求。</p>
+            <p>3、 因本协议所引起的用户与金谷财行的任何纠纷及争议，各方一致同意，不论争议金额大小，均提交北京仲裁委员会适用北京仲裁委员会仲裁规则项下的简易程序进行仲裁。仲裁裁决为终局裁决，对双方均具有约束力。</p>
+            <p>4、 金谷财行对本协议具有最终解释权。</p>
+        </div>
+        <a href="javascript:void(0)" class="close1" style="background:#e45664; border-radius:6px; border:0px; color:#ffffff; font-weight:bold; font-size:14px; cursor:pointer; position:inherit; width:167px; height:38px; line-height:38px; margin:20px auto; display:block; text-align:center;">同意并继续</a>
+      </div>
+    </div>
+
+    <div id="isApp"></div>
+
+    <script src="/static/H5/js/jquery_1.11.0.min.js"></script>
+    <script type="text/javascript" src="/static/H5/js/placeholder.js"></script>
+    <script type="text/javascript" src="/static/H5/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="/static/H5/js/md5.js"></script>
+    <script src="/static/js/config.js"></script>
+    <script>
+
+        if($('#isApp').is(':visible')){
+            window.location.href="/static/H5/invite.html?referrerId=" + getQueryString('referrerId');
+        }
+
+        $('.protocol').click(function(){
+            $(this).toggleClass('imgDn');
+            var protocol = $('#protocol');
+            protocol.attr('checked', protocol.attr('checked'));
+        });
+
+      //新手标
+      function inviteRegData() {
+        $.ajax({
+          type: 'post',
+          dataType: 'json',
+          url: BASE_URL + '/api/web/member/inviteRegData',
+          success: function (data) {
+            if(data.code == 100 && data.data && data.data.newProduct) {
+              $('#rookieMoneyflowName').text(data.data.newProduct.name);
+              $('#rookieMoneyflowReturnrate').text(data.data.newProduct.annualYield);
+              $('#rookieMoneyflowMinamount').text(data.data.newProduct.minInvestmentAmount);
+              $('#rookieFxType').text('到期还本付息');
+            }else{
+              $('#newFlow').addClass('dn');
+            }
+          }
+        });
+      }
+
+      function getDataList(){
+        $.ajax({
+          type: 'post',
+          dataType: 'json',
+          url: BASE_URL + '/api/web/product/list',
+          data: {isHomeShow: false, pageNum: 1, pageSize: 2},
+          success: function (data) {
+            if (data.code == 100 && data.data && data.data.list) {
+              var str = '',
+                  dataObj = data.data.list;
+
+              for(var i=0;i<dataObj.length;i++){
+                str += '<div class="item" id="dataList"><h3><span class="bgc-arallelogram">推荐标的</span>'+ dataObj[i].name +'</h3><ul><li><p class="p1">' + dataObj[i].annualYield +'<i class="fz24">%</i></p><p class="c9">借款利率</p></li><li class="bd ml20"><p class="p2">' + dataObj[i].minInvestmentAmount +'<i class="fz22">元</i></p><p class="c9">起投金额</p></li><li class="ml20"><p class="p3">到期还本付息</p><p class="c9">收益分配方式</p></li><li class="fr"><a href="#reg" class="btn">立即参与</a></li></ul></div>'
+              }
+              if(str)
+                $('#dataList').html(str);
+            }
+          }
+        });
+      }
+
+
+        $(function(){
+            //新手标
+            inviteRegData();
+
+            // 推荐标
+            getDataList();
+
+            $('#myForm').validate({
+                rules:{
+                    phone: {
+                        required:true,
+                        phone: true
+                    },
+                    valiCode: {
+                        required:true,
+                        valiCode: true,
+                        remote: {
+                            type:"POST",
+                            url: BASE_URL + '/api/web/member/userRegister',
+                            data:{
+                                loginName: function() {return $("#phone").val();},
+                                phone_code: function() {return $("#valiCode").val();},
+                                flag:"register"
+                            }
+                        }
+                    },
+                    pwd: {
+                        required:true,
+                        pwd: true
+                    }
+                },
+                messages:{
+                    phone:{
+                        required:'请输入领取手机号'
+                    },
+                    valiCode: {
+                        required:'请输入短信验证码',
+                        remote: "验证码输入有误"
+                    },
+                    pwd: {
+                        required: '请输入密码，由6-20位数字、字母、字符组成'
+                    }
+                },
+                submitHandler: function() {
+                    var username = document.getElementById('phone');
+                    var validateCode = document.getElementById('valiCode');
+                    var password = document.getElementById('pwd');
+                    var inviterCode = document.getElementById('invitationCode');
+                    var agent = $("#agent").val();
+
+                    checkForm(1,username, function(){
+                        //if(checkForm(2, validateCode)){
+                            //校验是否勾选协议
+                            if($(".protocol").hasClass('imgDn')){
+                                $("#protocolEr").html("请同意并勾选协议").removeClass('dn');
+                                return false;
+                            }else{
+                                $("#protocolEr").html('').addClass('dn');
+                                //加密用户登录面
+                                password = hex_md5($.trim(password.value));
+
+                                //防止重复提交
+                                var obj = $("#btnReg");
+                                obj.attr("disabled", true);
+
+                                $.ajax({
+                                    type: "post",
+                                    url: "${ctx}/user/jlbUsersInfo/saveRegister",
+                                    data:{userName: $.trim(username.value), password: password,captcha:"",inviteCode:$.trim(inviterCode.value)},
+                                    dataType: "json",
+                                    async:false,
+                                    success: function (data) {
+                                        $(obj).addClass('success');
+                                        if(data.code == '1'){
+                                            obj.val('注册成功！');
+                                            var countdown = 2;
+                                            var countdownFn = function(){
+                                                if(countdown === 0){
+                                                    clearInterval(tempTt);
+                                                    window.location.href='/';
+                                                }else{
+                                                    countdown--;
+                                                }
+                                            };
+                                            var tempTt = setInterval(countdownFn, 1000);
+                                        }else{
+                                            alert(data.msg);
+                                        }
+                                    },
+                                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                        alert(errorThrown+"----");
+                                        obj.removeAttr("disabled");
+                                    }
+                                });
+                            }
+                        //}
+                    });
+                }
+            });
+
+            //发送手机短信验证码
+            $('#getCode').click(function(){
+                var thisBtn = $(this);
+                var v = document.getElementById('phone');
+                if(!($("#myForm").validate().element($('#phone')))){
+                    return false;
+                }else{
+                    //checkPhone(v.value, v, function(){
+                        thisBtn.attr("disabled", true);
+                        InterValObj = window.setInterval(SetRemainTime, 1000);
+                        $.ajax({
+                            url: BASE_URL + '/api/web/member/getPhoneCode',
+                            type: "post",
+                            dataType: "json",
+                            data: { mobile: v.value, type: 'inviteRegister'},
+                            async:false,
+                            success:function(data) {
+                                if(data.code != 100){
+                                    thisBtn.attr("disabled", false);
+                                    window.clearInterval(InterValObj);// 停止计时器
+                                    wait = 0;
+                                    $('#phoneEr').html(data.msg).removeClass('dn');
+                                }
+                            }
+                        });
+                    //});
+
+                    return false;
+                }
+            });
+
+            //校验手机短信验证码
+            $('#valiCode').blur(function(){
+                var validateCode = document.getElementById('valiCode');
+                if(validateCode.value.length == 6)
+                    checkForm(2,validateCode);
+            });
+
+            $('#phone').keyup(function(){
+                $('#phoneEr').html('').addClass('dn');
+            });
+
+            // 注册协议相关
+            $("#zcxy").click(function() {
+                $("#mask_bg").show();
+                $(".box1").show();
+            });
+
+            // 注册协议相关
+            $(".close1").click(function() {
+                $('.protocol').removeClass('imgDn');
+                $('#protocol').attr('checked',true);
+                $("#mask_bg").hide();
+                $(".box1").hide();
+                $('#protocolEr').addClass('dn');
+            });
+        });
+
+        //验证码倒计时
+        var wait = 60;
+        var InterValObj; // timer变量，控制时间
+        function SetRemainTime() {
+            var obj = $("#getCode");
+            if (wait == 0) {
+                obj.removeAttr("disabled");
+                obj.text("获取验证码");
+                wait = 60;
+                obj.removeClass('disabled');
+                window.clearInterval(InterValObj);// 停止计时器
+            } else {
+                obj.attr("disabled", true);
+                obj.text("重新发送(" + wait + ")");
+                obj.addClass('disabled');
+                wait--;
+            }
+        }
+
+        jQuery.validator.addMethod("phone", function (value, element) {
+            var mobile = /^1[3|4|5|7|8]\d{9}$/;
+            return this.optional(element) || (mobile.test(value));
+        }, "请输入11位领取手机号");
+
+        jQuery.validator.addMethod("valiCode", function (value, element) {
+            $("#valiCodeEr").addClass('dn');
+            var valiCode = /(^\d{6}$)/;
+            return this.optional(element) || (valiCode.test(value));
+        }, "请输入6位短信验证码");
+
+        jQuery.validator.addMethod("pwd", function (value, element) {
+            var valiCode = /^(?![0-9]+$)(?![a-zA-Z]+$)(?![_\!@#\$%\^&\*\(\)_\+=|<>,\.{}:;\]\[\~\/\?\"'\\-]+$)[A-Za-z0-9_\!@#\$%\^&\*\(\)_\+=|<>,\.{}:;\]\[\~\/\?\"'\\-]{6,20}$/;
+            return this.optional(element) || (valiCode.test(value));
+        }, "请输入密码，由6-20位数字、字母、字符组成");
+
+
+        //校验form表单
+        function checkForm(n,v,callback){
+            // //手机号
+            if(n==1){
+                var phone = $.trim(v.value);
+                // //远程校验
+                // checkPhone(phone,v,callback);
+                return $("#rt").val();
+            }
+        }
+
+        $('.eye').click(function () {
+            $(this).toggleClass('open');
+            $('#pwd').attr('type',(!$(this).hasClass('open') ? 'password' : 'text'));
+        });
+
+        $('#pwd').keydown(function(e){
+            if(e.keyCode == 32){
+                return false;
+            }
+        });
+
+        function getQueryString(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+    </script>
+
+    <!-- 百度统计  -->
+    <!-- <script type="text/javascript" src="/jlfinance/js/baidu.js"></script> -->
+    <!--ga统计  -->
+    <!-- <script src="/jlfinance/js/ga.js" type="text/javascript"></script> -->
+</body>
+</html>

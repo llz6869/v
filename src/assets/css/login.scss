@@ -1,0 +1,226 @@
+/* login首部start */
+.h-login{
+    line-height: 90px;background:$cf;
+    .logo{width: 264px;height: 46px; margin:22px 0;background:url("/static/images/login/h-login.png") no-repeat;}
+    .hot-line{color: $c6;font-size:$px18;text-align: $ta-r;}
+}
+/* login首部end */
+
+/*登录框及背景 start*/
+.login-bg{
+    width: 100%; height: 650px;background:url("/static/images/login/login-bg.jpg") no-repeat center center;
+    .container{position: relative;}
+    .login{
+        position:absolute; top:105px; right:0;width: 300px;height: 444px; padding: 0 50px;font-size:$px14;background: $cf;
+        .title{font-size:22px;line-height: 92px;color: $c3;text-align: $ta-l;}
+    }
+
+    /*忘记密码start*/
+    .user-name{
+        color: $c6;line-height:14px;
+        .forget{float: right; color: $cef6c2d;}
+        .register{color: $cef6c2d;}
+        .check-style{float: left;margin-top: -1px; }
+    }
+    /*忘记密码end*/
+}
+/*登录框及背景 end*/
+.login-bg,.register-bg{
+    .btn{
+        display:$db; cursor: pointer;width: 300px; height: 50px; line-height: 50px; font-size: $px16;text-align: $ta-c;color: $cf;background:$cef6c2d;border-radius: 8px;
+        &:hover{ background-color:#dd5919;}
+    }
+    .m-btn{margin:30px 0;}
+}
+
+
+/*注册框及背景 start*/
+.register-bg{
+    width: 100%; height: 650px;background:url("/static/images/login/register-bg.jpg") no-repeat center center;
+    .container{position: relative;}
+    .login{
+        position:absolute; top:15px; right:0;width: 300px;height: 570px; padding: 0 50px 50px;font-size:$px14;background: $cf;
+        .title{
+            height:22px; font-size:20px;padding:32px 0 18px;color: $c3;text-align: $ta-l;
+            .have{
+                color: $c9;font-size:$px16;padding-top:4px;
+                a{color: $cef6c2d;}
+            }
+        }
+
+        /*注册-多选项 start*/
+        .input-group{
+            position: relative;
+            .fl{
+                position: relative;width:150px;margin:10px 0 20px;
+                /*选择框 start*/
+                .v-checkbox{
+                    position: relative;display: $dib;float:left;width: 14px;height: 14px;margin:2px 5px 0 0;border: 1px solid #e0e0e0;border-radius: 50%;
+                    &.active{
+                        &:before{position: absolute;display: $dib;top: 3px;left: 3px;width: 8px; height: 8px;content: ' ';background-color: $cef6c2d;border-radius: 50%;  }
+                    }
+                }
+            }
+            .checbox-erorr{
+                position: absolute; top:32px; display: none;width: 300px; height: 47px;background: url("/static/images/login/checbox-erorr.png") no-repeat;z-index: 999;
+                p{ text-align:$ta-c; font-size: $px12; color: $c6; line-height: $px12; padding-top: 20px;}
+            }
+            /*注册身份提示 start*/
+            &:hover{
+                .checbox-erorr{ display:block;}
+            }
+            /*注册身份提示 end*/
+        }
+        /*注册-多选项 end*/
+
+        /*输入密码 清除密码叉子按钮 start*/
+        .input-close{
+            position: relative;width: 100%; background: none;
+            .close{ position: absolute; top:16px; right: 10px; width: 16px; height: 16px; display: $db; background: url("/static/images/login/close.png") no-repeat;}
+        }
+        /*输入密码 清除密码叉子按钮 end*/
+
+        /*密码安全等级 start*/
+        .cipher-rank{
+            position: absolute; top:254px;width: 300px; height: 137px;z-index: 999; background: url("/static/images/login/cipher-rank.png")no-repeat;
+            .content{
+                padding: 26px 20px 10px;
+                p{
+                    font-size: $px12;line-height: $px12; color: $c6; padding-bottom: 12px;
+                    span{
+                        display: $dib; width: $px12; height: $px12; margin-right: 5px; background: url("/static/images/login/cipher-dot.png") no-repeat;
+                        &.dot{background-position: 0 -30px;}
+                        &.fork{background-position: 0 0;}
+                        &.correct{background-position: 0 -15px;}
+                    }
+                    &:first-child{
+                        font-size: $px14;line-height: $px14; color: $c3;padding-bottom: 15px;
+                        span{
+                            display: $dib; width: 30px;  padding: 1px 0;font-size: $px12;line-height: $px12; margin-left: 5px; text-align: $ta-c; background: none;
+                            &:first-child{margin-left: 15px;}
+                            &.c6d{background-color:#bbb;}
+                            &.cef6c2d{background-color: #ef6c2d; color: $cf;}
+                        }
+                    }
+                }
+            }
+
+        }
+        /*密码安全等级 end*/
+
+        /*注册协议start*/
+        .agreement{
+            color: $c6;padding-bottom:20px;font-size:14px;
+            a{
+                color: $c6;
+                &:hover{text-decoration:underline;}
+            }
+        }
+        /*注册协议end*/
+    }
+}
+/*注册框及背景 end*/
+
+
+/*注册成功 start*/
+.register-suc{
+    width: 600px;height: 190px;margin:22px 0 42px 0;padding: 166px 300px 204px 300px;background:$cf;color:$c3;
+    .register-icon{width: 114px;height: 104px;background:url("/static/images/login/register-suc.png") no-repeat;}
+    .register-con{
+        width: 460px;height: 190px;margin-left: 26px;
+        h3{font-size:$px24;padding-bottom: 30px;}
+        p{font-size:$px14;}
+        .p-padding{padding: 20px 0 40px 0}
+        .btn{display:$db;margin-right:30px;width: 120px;height: 36px;text-align: $ta-c;line-height:36px;color: $cf;font-size:$px14;background:$cef6c2d;border-radius: 8px;
+            &:hover{ width: 118px;height:34px;background:$cf;color:$cef6c2d;border: 1px solid $cef6c2d;}
+        }
+        .btn-a{display:$db;margin-right:30px;width: 118px;height:34px;text-align: $ta-c;line-height:36px;border: 1px solid $cef6c2d;color: $cef6c2d;background:$cf;font-size:$px14;border-radius: 8px;
+            &:hover{ width: 120px;height: 36px;color:$cf;background:$cef6c2d;}
+        }
+    }
+}
+/*注册成功 end*/
+
+/*忘记密码 start*/
+.modify{
+    width: 650px;height: 416px; margin:20px 0 40px 0;padding: 74px 275px;background:$cf;
+    /*进度条start*/
+    .step{
+        width: 650px;height: 60px; padding-bottom:50px;
+        /*上部进度 start*/
+        .enter{
+            width: 614px; height: 24px; padding: 0 18px;
+            /*完成状态*/
+            .finished{width: 10px;height: 10px;background:$cf;border:7px solid $cef6c2d;border-radius: 24px;}
+            .unfinished{width: 24px;height: 24px;border-radius:24px;background: #eee;color: $c9;text-align: $ta-c;font-size:$px18;}
+            .hook{width: 24px; height: 24px;background:url("/static/images/login/hook.png") no-repeat;}
+            /*长条*/
+            .strip{width: 270px;height: 2px;margin-top: 11px;background: #eee;}
+            .strip-orange{background:$cef6c2d;}
+        }
+        /*上部进度 end*/
+        .words{
+            width: 650px; height:$px14;padding-top: 22px;font-size:$px14;color: $c9;
+            .state{width: 60px;}
+            .state-padding{padding-left: 236px;}
+            span{display: $dib;}
+            .current{color: $c3;}
+        }
+    }
+    /*进度条end*/
+    /*内容start*/
+    .content{
+        position:relative;width: 400px;height: 300px; padding: 0 125px;
+        .input-box{
+            width: 398px;height: 48px;margin-bottom: 32px;color:$c3;line-height:48px;font-size:$px14;border:1px solid #eee;border-radius: 8px;
+            span{padding-left: 20px;}
+            em{display: inline-block;padding: 0 15px 0 10px;color:$cef6c2d;vertical-align: middle;}
+            input{width: 130px;height: 20px;padding-left: 20px;color: #bbb;border-left: 1px solid #eee;}
+            button{ background: #fff;border-radius:0 10px 10px 0;}
+            .state{
+                float:right;width: 120px;height: 48px;border-left: 1px solid #eee;text-align: $ta-c; line-height: 48px;
+                img{width: 120px; height: 48px; }
+            }
+            .orange{color: $cef6c2d;}
+        }
+        .phone{position: absolute; top:58px; left: 125px;font-size:$px12;color: $cef6c2d;}
+        .validate{position: absolute; top:142px; left: 125px;font-size:$px12;color: $cef6c2d;}
+        .validate-phone{position: absolute; top:220px; left: 125px;font-size:$px12;color: $cef6c2d;}
+        .btn{display:$db;width: 400px;height: 50px;line-height: 50px;text-align: $ta-c;font-size:$px16;color: $cf;border-radius: 8px;background:$cef6c2d;}
+
+    }
+    /*内容end*/
+
+    /*注册成功start*/
+    .register-com{
+        width: 400px;padding: 50px 125px;
+        .icon{width: 96px;height: 92px;background:url("/static/images/login/register-icon.png") no-repeat;}
+        .r-content{ padding-left: 38px; width: 236px;
+            h3{font-size:24px; color: $c3;padding-bottom: 30px;}
+            .btn{ display:$db;width: 120px;height: 38px;color: $cf;text-align: $ta-c;font-size:$px14;line-height:38px;background:$cef6c2d;border-radius: 8px;}
+        }
+    }
+    /*注册成功end*/
+}
+/*忘记密码 end*/
+
+/* login页尾 start*/
+.f-login{line-height: 80px;font-size:$px12;text-align:$ta-c;color: $c6;background:$cf;}
+/* login页尾 end*/
+
+/* 404 500页面 start*/
+.erorr-layer{
+    .erorr404{width: 100%;height: 990px; background: url("/static/images/login/404.jpg") no-repeat center center;}
+    .erorr500{width: 100%;height: 990px; background: url("/static/images/login/500.jpg") no-repeat center center;}
+    .content{
+        padding-top: 420px; text-align: $ta-c; height: 500px;
+        h3{ color: #f3d679; font-size: 30px; line-height: 100px;}
+        a{color:$cf; font-size: $px18; padding: 6px 0; border-bottom: 1px solid $cf;}
+    }
+}
+/* 404 500页面 end*/
+
+.form-group01{
+    position:relative;
+    .erorr{position: absolute;top:-20px;left:24px;line-height: 16px; font-size: 14px; color: #ef6c2d;}
+}

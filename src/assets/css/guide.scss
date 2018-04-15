@@ -1,0 +1,111 @@
+.guide{
+    color: $c6;
+    .top{width: 100%; height: 500px;background:url("/static/images/guide/guide-top.jpg") no-repeat center center;}
+    /*guide模块下的标题 start*/ 
+    .title{
+        width: 100%;height: 42px; margin: 0 auto; padding: 85px 0;text-align: $ta-c;
+        span:nth-of-type(1){
+            position: relative;display: $dib;width: 260px;height: 2px; margin: 14px 0;background: $c0;
+            &:after{ position: absolute;top:-4px; right:-10px;display: $db; content: '';width: 10px; height: 10px; border-radius: 10px; background: $c0;}
+        }
+        span:nth-of-type(2){ padding: 0 34px; font-size: 42px; line-height: 42px; text-align: $ta-c;color: $c0;}
+        span:nth-of-type(3){
+            position: relative;display: $dib;width: 260px;height: 2px; margin: 14px 0;background: $c0;
+            &:before{ position: absolute;top:-4px; left:-10px;display: $db; content: '';width: 10px; height: 10px; border-radius: 10px; background: $c0;}
+        }
+    }
+    /*guide模块下的标题 end*/
+
+    /*了解金谷财行 start*/
+    .understand{
+        width: 100%;padding-bottom: 54px;background:$cf;
+        p{font-size:$px16;line-height: 28px;padding-bottom: 30px;}
+    }
+    /*了解金谷财行 end*/
+
+    /*金谷财行优势 start*/
+    .advantage{
+        width: 100%;
+        .content{width:1200px;height: 200px; background:url("/static/images/guide/a-content.png") no-repeat;}
+        p{
+            font-size: $px16; color: $c0;height: 20px;padding: 26px 0 104px;
+            span{float: left; width: 300px; text-align: $ta-c;}
+            span:nth-of-type(1){ width: 260px; padding-left: 40px;}
+            span:nth-of-type(2){ width: 280px; padding-left: 20px;}
+            span:nth-of-type(4){ width: 260px; padding-right: 40px;}
+        }
+    }
+    /*金谷财行优势 end*/
+
+    /*金谷财行为什么安全start*/
+    .security{
+        width: 100%;background:$cf;
+        p{ width:950px;font-size:$px16;line-height: 28px;}
+        .content{width:784px;height: 486px;padding:70px 208px 100px; background:url("/static/images/public/flow-chart.png") no-repeat 208px 70px;}
+    }
+    /*金谷财行为什么安全end*/
+
+    /*如何出借 start*/
+    .g-lend{
+        width: 100%;        
+        .content-hide{width: 1000px; height: 610px;overflow: hidden;}
+
+        .content{
+            position: relative; width:1086px; padding:0 57px 30px;
+            .top{width: 674px; height: 6px; margin: 62px 206px 80px; background: url("/static/images/guide/content-top.png") no-repeat;}
+            /*注册*/
+            .register{ 
+                position: absolute;top: -66px; left: 124px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step.png") no-repeat 0 0;
+                &.active{position: absolute;top: -66px; left: 124px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step-active.png") no-repeat 0 0;}
+            }
+            /*开户*/
+            .open{ 
+                position: absolute;top: -66px; left: 288px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step.png") no-repeat -164px 0;
+                &.active{position: absolute;top: -66px; left: 288px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step-active.png") no-repeat -164px 0;}
+            }
+            /*充值*/
+            .recharge{ 
+                position: absolute;top: -66px; left: 454px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step.png") no-repeat -328px 0;
+                &.active{position: absolute;top: -66px; left: 454px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step-active.png") no-repeat -328px 0;}
+            }
+            /*出借*/
+            .lend{ 
+                position: absolute;top: -66px; left: 616px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step.png") no-repeat -492px 0;
+                &.active{position: absolute;top: -66px; left: 616px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step-active.png") no-repeat -492px 0;}
+            }
+            /*回款*/
+            .payment{ 
+                position: absolute;top: -66px; left: 776px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step.png") no-repeat -650px 0;
+                &.active{position: absolute;top: -66px; left: 776px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step-active.png") no-repeat -650px 0;}
+            }
+            /*提现*/
+            .carry{ 
+                position: absolute;top: -66px; left: 940px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step.png") no-repeat -816px 0;
+                &.active{position: absolute;top: -66px; left: 940px; z-index: 99; width: 148px; height: 148px; background: url("/static/images/guide/step-active.png") no-repeat -816px 0;}
+            }
+
+            .p-title{ 
+                width: 966px; margin: 0 auto; color: $c6; font-size: $px16; padding-bottom: 80px;
+                span{ float: left; display: $db; width: 161px; text-align: $ta-c;}
+            }
+
+            /*切换start*/
+            .switch{
+                position: relative;width: 1000px; padding: 0 42px 50px; border:1px solid #bfbfbf; border-radius: 10px;
+                .s-title{width: 1000px;height: 94px;line-height: 94px; color: $c0; font-size: $px24;}
+                .s-img{width: 1000px; height: 610px;}
+                .prev{ position: absolute; top:370px; left:0;cursor: pointer;width: 80px; height: 80px; background: url("/static/images/guide/prev.png") no-repeat 0 0;}
+                .next{ position: absolute; top:370px; right:0;cursor: pointer;width: 80px; height: 80px; background: url("/static/images/guide/prev.png") no-repeat -100px 0;}
+            }
+            /*切换end*/
+        }
+    }
+    /*如何出借 end*/
+
+    .bottom{
+        width: 100%; height: 350px;background:url("/static/images/guide/guide-bottom.jpg") no-repeat center center;
+        h2{ padding:90px 0 50px;font-size:42px;color: $cf;text-align: $ta-c;}
+        .btn{display:$db;width: 380px;height: 70px;font-size:$px24;color: $cf; text-align: $ta-c;line-height:70px;background: $cef6c2d;}
+    }
+}
+

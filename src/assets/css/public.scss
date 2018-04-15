@@ -1,0 +1,234 @@
+/*颜色公共变量start*/
+$cef6c2d:#ef6c2d;
+$cf2:#f2f2f2;
+$c0:#000;
+$c3:#333;
+$c6:#666;
+$c9:#999;
+$cf:#fff;
+/*颜色公共变量end*/
+
+/*像素公共变量start*/
+$px12:12px;
+$px14:14px;
+$px16:16px;
+$px18:18px;
+$px24:24px;
+$px1200:1200px;
+/*像素公共变量end*/
+
+/*display三种变量start*/
+$db:block;
+$dib:inline-block;
+$dn:none;
+/*display三种变量end*/
+
+/*text-align三种变量start*/
+$ta-c:center;
+$ta-l:left;
+$ta-r:right;
+/*text-align三种变量end*/
+
+/* 公共模块样式start */
+body{position:relative;min-width:$px1200;font-family:'Microsoft Yahei';word-wrap:break-word;background: $cf2;}
+header,header a,footer a,a{transition:all .35s;}
+a:hover{text-decoration: none;}
+.container{
+    @extend .m-auto;width:$px1200;
+
+    .box-bgc{margin: 30px auto;padding: 40px 50px;background-color: $cf;}
+}
+.m-auto{margin:0 auto;}
+.fl{float:left;}
+.fr{float:right;}
+.pos-f{position:fixed;}
+.pos-r{position:relative;}
+.por-a{position:absolute;}
+.dn{display: none;}
+.db{display: block;}
+.curd{cursor: default;}
+.clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;visibility:hidden}
+.clearfix{zoom:1}
+.clearfix:after{clear:both}
+/* 公共模块样式end */
+
+
+
+
+
+/*精选专区 start*/
+.product-list{
+    .content{
+        background:$cf;
+
+        ul li{
+            height: 79px;font-size:$px14;color: $c3;text-align: $ta-c;border-bottom:1px solid #e5e5e5;/*line-height:65px;*/
+            &.subject{
+                color: $c9;font-size:$px14;line-height: 79px;padding: 0 40px;
+                span{display: block;text-align: $ta-c; float: left; }
+                span:first-child{width: 208px;padding-left:$px12; text-align: $ta-l;}
+                span:nth-child(2){width: 108px; padding: 0 40px 0 22px; }
+                span:nth-child(3){width: 154px;}
+                span:nth-child(4){width: 192px;}
+                span:nth-child(5){width: 294px;}
+                span:last-child{width: 90px;}
+            }
+        }
+
+        /* 为了解决undefined问题，特意抽出来 start */
+        .project-list{
+            li{
+                padding: 0 40px;
+                /*项目名称*/
+                .name{
+                    width: 208px; padding-left: $px12; margin-top: 34px; padding-left: 12px; overflow: hidden;white-space: nowrap;text-overflow: ellipsis; text-align: $ta-l; 
+                    a{color: $c3;}
+                }
+                // 新手标识
+                .novice{display: $dib;margin-left: 10px;padding:1px 4px;font-size: $px12;color: $cef6c2d; border: 1px dashed $cef6c2d;border-radius: 5px;}
+
+                /*年化利率*/
+                .rate{
+                    width: 170px; margin-top: 25px;
+                    .l-rate{
+                        color: $cef6c2d;font-size:$px24;
+                        span{font-size:$px16;}
+                    }
+                }
+                /*项目期限*/
+                .term{width: 154px; margin-top: 34px;}
+                /*项目规模*/
+                .scale{width: 192px;margin-top: 34px; }
+                /*进度*/
+                .schedule{
+                    width: 294px;
+                    .strip{
+                        width: 160px;height: 34px;padding: 18px 62px 17px; margin-top: 4px;color:$c9;
+                        .percent{
+                            height:$px14;font-size:$px14;line-height:$px14;text-align: $ta-r;
+                            .bar{
+                                width: 100px;height: 4px;margin: 5px 0;background:#e8e8e8;
+                                .bar-orange{background:$cef6c2d;height: 4px;}
+                            }
+                        }
+                        .surplus{height:$px12;padding-top:8px;font-size:$px12;line-height:$px12;text-align: $ta-l;}
+                    }
+                }
+                /*操作*/
+                .operate{
+                    width: 90px;
+                    .operate-btn{ display:$db; width: 90px;height: 32px; margin-top: 25px; line-height: 32px;color: $c0;border-radius: 8px;}
+                }
+                &:hover{transition: box-shadow .35s ease;box-shadow:0 0 15px #d9d9d9;
+                    .operate .operate-btn{
+                        background: $cef6c2d; color: $cf;
+                        &.disabled{background: #e5e5e5; color: #666;cursor: default; }
+                    }
+                }
+            }
+        }
+        /* 为了解决undefined问题，特意抽出来 end */
+    }
+}
+/*精选专区 end*/
+
+/* 分页 start */
+.p-layer{text-align: $ta-c;}
+.pagination{
+    display:$dib;margin:40px auto;color:$c6;font-size:$px14;
+    a{
+        float:left;padding:6px 13px;color: $c6;border:1px solid #ddd;border-left-width:0;background-color: $cf;
+        &:hover{color: $cf;background:#f5b562;text-decoration:none;border:1px solid #f5b562;border-left-width:0;}
+        &:first-child{border-left-width:1px;}
+        /*被禁用 start*/
+        &.active{background-color: $cef6c2d;color: $cf;border-color: $cef6c2d;}
+        &.disabled{
+            cursor:not-allowed;color: $c6;
+            &:hover{border: 1px solid #ddd;border-left-width: 0;background-color: $cf;}
+        }
+        &.first{border-left-width:1px !important;}
+        /*被禁用 end*/
+    }
+}
+
+/* 分页 end */
+
+/* 侧导航-个人账户 start */
+
+aside{
+    float:left;width:216px;margin:40px 0;text-align:center;font-size:$px18;background-color:$cf;
+    h2{padding: 20px 0; color:$c0;font-size:$px18;border-bottom: 1px solid #f2f2f2;}
+    ul{
+        background-color:$cf2;
+        li{
+            a{
+                display: block;width: 210px;margin:1px auto 0;padding:20px 0;color:#999;line-height:$px18;border:2px solid $cf;border-right:none;border-left-width:5px;background-color:$cf;color:$c9;font-size: $px14;
+                &.router-link-active{
+                    border-color:$cef6c2d;color:$cef6c2d;
+                }
+                &:hover{color:$cef6c2d;}
+            }
+        }
+    }
+
+    .app-download{margin: 50px 0 30px; }
+}
+
+/* 左导航 end */
+
+/* 选择切换 start */
+.choose-wrapper{
+    background-color: $cf;
+    .choose{
+        li{
+            float:left;width:110px;padding:15px 0 0;color:$c6;font-size: $px14;
+            &:first-child{cursor:auto;transition:none;}
+            &.active{color:$cef6c2d;}
+            &:nth-child(n+2) span{
+                cursor:pointer;transition:all .35s;
+                &:hover{color:$cef6c2d;}
+            }
+        }
+    }
+}
+/* 选择切换 end */
+
+/*左右结构-右侧title start*/
+.half-title{ padding: 25px 0 15px; width:100%;font-size:$px18;line-height:$px18;text-align:$ta-l;color:$c3; border-bottom: 2px solid $cf2;}
+/*左右结构-右侧title end*/
+
+.input-close{display: $dib;width: 16px;height: 16px;background: #ddd url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIBAMAAAA2IaO4AAAAG1BMVEX///////8AAAD///////////////////////8ogvoKAAAACHRSTlPHDwC2tzo5Du4uJwoAAAAoSURBVAjXY0guUjRj8GAUaGEQaOBgZFDkaBACExCuBaNAM0OwkKIrAIU4BkkthV8TAAAAAElFTkSuQmCC) center center no-repeat;cursor: pointer;border-radius: 50%;}
+
+/*input 组件 start*/ 
+.form-group{
+    position: relative;overflow: hidden;width:100%;height:44px;padding-bottom: 30px;line-height: 44px;
+    span{ float:left;display:$db;width: 144px;height:44px;padding-right: 26px;text-align: $ta-r; color: $c3;font-size:$px18;}
+  
+    .input-layer{ 
+        position:relative;width: 100%;height: 100%;
+        input{ width: 99%; height: 42px;text-indent: 20px;color: #bbb;border: 1px solid #bbb;border-radius: 5px;}
+        /*错误提示*/
+        .erorr{position: absolute;top:38px;left:20px;font-size:$px14;color: $cef6c2d;}
+    }
+
+    .input-big{
+        position:relative; width: 380px; height: 100%;
+        input{ width: 99%; height: 42px;text-indent: 20px;color: #bbb;border: 1px solid #bbb;border-radius: 5px;}
+        /*错误提示*/
+        .erorr{position: absolute;top:38px;left:20px;font-size:$px14;color: $cef6c2d;}
+    }
+    /*图形验证码 start*/
+    .state{
+        position: absolute;width: 118px;height: 42px;top: 1px;right: 2px; z-index: 2;
+
+    }
+    img{width: 118px;height: 44px;cursor: pointer;}
+    /*图形验证码 end*/
+    .btn-small{width: 100%;height: 40px;border-left: 1px solid #bbb; margin-right: 5px;background-color: $cf;cursor: pointer;border-radius: 0 8px 8px 0;}
+}
+/*input 组件 end*/
+
+
+/* 列表页面中，没有数据时 用于没有图标的简单无数据提示 start */
+.list-nodata{margin: 10px 0;padding: 100px 0;text-align: center;}
+/* 列表页面中，没有数据时 用于没有图标的简单无数据提示 end */

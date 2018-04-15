@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>金谷财行</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link href="/static/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="/static/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+       *{margin: 0;padding: 0;}
+        img{height:auto;width:100%; vertical-align:middle; }
+    </style>
+  </head>
+  <body>
+    <div style=" position: relative;">
+      <img src="img/appdownload/caihangdown1.jpg">
+
+      <div style="text-align: center; position: absolute; top: 2.746667rem; left:50%; margin-left: -2.3rem;">
+          <a href="https://file.jingubank.com/app/jingubank.apk" id="donloa1" style="display: none;">
+            <img style=" width: 4.8rem; height: 1.173333rem" src="img/appdownload/caihangdown2.png" >
+          </a>
+          <a href="https://itunes.apple.com/us/app/id1256947146" id="donloa2" style="display: block;">
+            <img style=" width: 4.8rem; height: 1.173333rem" src="img/appdownload/caihangdown2.png">
+          </a>
+      </div>
+    </div>
+
+    <script>
+      var odonloa1 = document.getElementById('donloa1');
+      var odonloa2 = document.getElementById('donloa2');
+      if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {  //判断iPhone|iPad|iPod|iOS
+
+        odonloa2.style.display = 'block';
+        odonloa1.style.display = 'none';
+      } else if (/(Android)/i.test(navigator.userAgent)) {   //判断Android
+        odonloa1.style.display = 'block';
+        odonloa2.style.display = 'none';
+      } else {
+        odonloa1.style.display = 'block';
+        odonloa2.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

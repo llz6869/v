@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>迎存管，好运来</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link href="/static/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="/static/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <style>
+        body,h3,div,p,ul{margin: 0;}
+        body,h3,div,p,a,ul,li,span{padding: 0;}
+        img{border: 0;}
+        ul,li{list-style-type: none;}
+        body{font-family: 'PingFangSC-Regular', 'Microsoft YaHei', '宋体', Arial, Helvetica, sans-serif;}
+        .dn{display: none;}
+        .banner{height: 710px;color: #f3d68d;background: url(img/deposiTube/banner.jpg) center center no-repeat;}
+        .banner h3{width: 1100px;margin: 0 auto;padding-top: 363px;padding-right: 30px;font-size: 22px;text-align: center;font-weight: normal; }
+        .part1{height: 703px;background: url(img/deposiTube/part1-bg.jpg) center center no-repeat;}
+        .part1 p{width: 600px;margin: 0 auto;text-align: center;font-size: 20px;color: #f3d68d;}
+        .part1 .role{padding-top: 240px;padding-bottom: 20px;}
+        .go-lend{display: inline-block;width: 105px;height: 37px;line-height: 36px;background: url(img/deposiTube/btn-bg.jpg) center center no-repeat; font-size: 20px;color: #8a0d0e;text-decoration: none;}
+
+        /* 砸蛋 */
+        .break-eggs{width: 600px;margin: 30px auto 0;}
+        .break-eggs li{position: relative;float: left;width: 33%;height: 230px;}
+        .break-eggs li .egg{height: 230px;background: url(img/deposiTube/egg.png) center center no-repeat;}
+        .break-eggs li .egg:hover{background: url(img/deposiTube/egg-hover.png) center center no-repeat;}
+        .hammer{position: absolute;display: none;top: -55px;right: -30px;cursor: pointer; -o-transform-origin:100% 50%;-moz-transform-origin:100% 50%;-webkit-transform-origin:100% 50%;transform-origin:100% 50%;-o-transition:transform 1s;-moz-transition:transform 1s;animation:hammerbefore 1s;animation-iteration-count:infinite;-o-transition-timing-function:ease-in-out;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;}
+        .break-eggs li .egg.open{background: url(img/deposiTube/egg-open.png) center center no-repeat;}
+
+        /* 中奖记录和奖品展示 */
+        .look-gift{display: block;margin:0 auto;text-align: center;font-size: 20px;color: #f3d68d;text-decoration: none;clear: both;overflow: hidden;}
+        .show-gift{width: 1200px;margin: 0 auto;clear: both;overflow: hidden;}
+        .left,.right{float: left;margin-top: 50px;}
+        .left{width: 531px;height: 661px;margin-left: 35px;background: url(img/deposiTube/title-bg.png) top center no-repeat;}
+        .right{width: 582px;height: 661px;margin-left: 20px;background: url(img/deposiTube/list-bg.png) center center no-repeat;}
+        .gift-list{margin-top: 190px; padding: 30px 50px; clear: both;overflow: hidden;}
+        .gift-list li{float: left;width: 123px;height: 128px;}
+        .gift-list li:nth-child(3n-1){margin: 0 20px;}
+        .gift-list li img{display: block;width: 100%;}
+        .lucky-list{width: 86%;margin: 210px auto 0;}
+        .lucky-caption{margin: 0 auto; background-color: #d92125;border-radius: 10px;}
+        .lucky-caption span{display: inline-block;width: 32%;padding: 12px 0;font-size: 18px;color: #fff;font-weight: normal;}
+        .lucky-list tbody td{padding: 12px 0;color: #8a0d0e;text-align: center;font-size: 14px;}
+
+        /* 我的奖品列表 */
+        .part2{height: 745px;background: url(img/deposiTube/part2-bg.jpg) center center no-repeat;}
+        .part2 h3{margin-top: 60px;text-align: center;color: #8a0d0e;font-size: 30px;}
+        .part2 p{width: 1020px;margin: 50px auto 0;padding: 0 40px;font-size: 20px;color: #8a0d0e;line-height: 30px;text-align: left;}
+        .my-gift-list{width: 1020px;margin: 50px auto 0;}
+        .my-gift-list.mt0{margin-top: 0;}
+        .ohy{width: 1020px;height: 300px;margin: 0 auto;overflow-y: auto;}
+        .my-gift-list tr{border: 2px solid #8a0d0e;}
+        .my-gift-list td,.my-gift-list th{height: 50px;text-align: center;font-size: 20px;color: #fff;}
+        .my-gift-list thead th,.my-gift-list tbody td{border: 2px solid #fff;}
+        .my-gift-list tbody tr:nth-child(1n) td{border-top: 0;}
+
+        .my-gift-list thead th{background-color: #fff;color: #bf0000;border-bottom: 0;}
+        .my-gift-list thead th:first-child{width: 198px;border-right-color: #bf0000;border-top: 0;}
+        .my-gift-list thead th:nth-child(2){width: 306px;border-right-color: #bf0000;}
+        .my-gift-list thead th:nth-child(3){width: 300px;border-right-color: #bf0000;}
+        .my-gift-list thead th:last-child{width: 204px;}
+
+        .my-gift-list tr td:first-child{width: 198px;}
+        .my-gift-list tr td:nth-child(2){width: 306px;border-left-color: transparent;}
+        .my-gift-list tr td:nth-child(3){width: 300px;border-left-color: transparent;}
+        .my-gift-list tr td:last-child{width: 204px;border-left-color: transparent;}
+
+        .part3{height: 1452px;background: url(img/deposiTube/part3-bg.jpg) center center no-repeat;}
+        .role{width: 1200px;margin: 0 auto;}
+        .role h3{padding: 50px 0;font-size: 30px;text-align: center;color: #f7ebeb;}
+        .role h3.mt50{margin-top: 50px;}
+        .role p{margin: 35px 90px 0; font-size: 20px;color: #f7ebeb;line-height: 1.8em;}
+        .footer img{display: block;width: 100%;}
+
+        /* 小贴士 */
+        .tips-box{position: fixed;top: 30%;right: 18%;}
+        .tips-btn{float: right;display: block;width: 105px;height: 37px;line-height: 36px;background: url(img/deposiTube/btn-bg.jpg) center center no-repeat;font-size: 20px;color: #8a0d0e;text-decoration: none;text-align: center;}
+        .tips{position: relative;width: 363px;height: 179px;margin-top: 45px;background: url(img/deposiTube/tips-bg.png) center center no-repeat;z-index: 3;}
+        .tips-close{position: absolute;top: 20px;right: 10px;width: 12px;height: 13px;background: url(img/deposiTube/tips-close.png) center center no-repeat;cursor: pointer;z-index: 4;}
+        .tips-title{padding: 25px 0;font-size: 20px;color: #780303;text-align: center;font-weight: bold;}
+        .tips-context{padding: 0 24px;font-size: 18px;color: #780303;}
+
+
+        /* 弹框 */
+        .modal-mask{position: fixed;top:0;left: 0;width: 100%;height: 100%;background-color: #000;opacity: .4;z-index: 99;}
+        .modal-box{position: fixed;top: 50%;left: 50%;width: 423px;max-height: 340px;margin: -170px 0 0 -211.5px;background-color: #fff;border-radius: 10px;z-index: 100;}
+        .modal-close{position: absolute;top: 10px;right: 10px;width: 12px;height: 13px;background: url(img/deposiTube/tips-close.png) center center no-repeat;cursor: pointer;}
+        .modal-context{margin: 0 auto;text-align: center;padding-top: 20px;}
+        .modal-gift{padding: 10px 0;font-size: 18px;color: #780303;font-weight: bold;}
+        .modal-gift-show{padding-bottom: 20px;font-size: 14px;color: #780303;}
+        .modal-error{margin: 0 auto;padding: 50px 40px;text-align: center;color: red;font-size: 18px;color: #603022;}
+        .error-title{margin-bottom: 20px;font-size: 24px;color: #603022;}
+        /*.error-context{padding: 0 50px;}*/
+
+         /* 砸蛋动画 */
+        @keyframes hammerbefore{
+            0%{
+                -o-transform:rotate(7.5deg);
+                -moz-transform:rotate(7.5deg);
+                -webkit-transform:rotate(7.5deg);
+                transform:rotate(7.5deg);
+            }
+            50%{
+                -o-transform:rotate(-7.5deg);
+                -moz-transform:rotate(-7.5deg);
+                -webkit-transform:rotate(-7.5deg);
+                transform:rotate(-7.5deg);
+            }
+            100%{
+                -o-transform:rotate(7.5deg);
+                -moz-transform:rotate(7.5deg);
+                -webkit-transform:rotate(7.5deg);
+                transform:rotate(7.5deg);
+            }
+        }
+        @keyframes forhammer{
+            0%{
+                -o-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -webkit-transform:rotate(0deg);
+                transform:rotate(0deg);
+            }
+            10%{
+                -o-transform:rotate(35deg);
+                -moz-transform:rotate(35deg);
+                -webkit-transform:rotate(35deg);
+                transform:rotate(35deg);
+            }
+            30%{
+                -o-transform:rotate(-20deg);
+                -moz-transform:rotate(-20deg);
+                -webkit-transform:rotate(-20deg);
+                transform:rotate(-20deg);
+            }
+        }
+        @keyframes foregg{
+            0%{
+                -o-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -webkit-transform:rotate(0deg);
+                transform:rotate(0deg);
+            }
+            10%{
+                -o-transform:rotate(-3deg);
+                -moz-transform:rotate(-3deg);
+                -webkit-transform:rotate(-3deg);
+                transform:rotate(-3deg);
+            }
+            30%{
+                -o-transform:rotate(3deg);
+                -moz-transform:rotate(3deg);
+                -webkit-transform:rotate(3deg);
+                transform:rotate(3deg);
+            }
+            50%{
+                -o-transform:rotate(-3deg);
+                -moz-transform:rotate(-3deg);
+                -webkit-transform:rotate(-3deg);
+                transform:rotate(-3deg);
+            }
+            60%{
+                -o-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -webkit-transform:rotate(0deg);
+                transform:rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<!--头部开始-->
+
+<!--头部end-->
+<!-- 此处引用头部 -->
+
+<div class="banner"><h3>活动时间：2018年1月5日－2018年01月15日</h3></div>
+<div class="part1">
+    <p class="role">活动期间单笔出借金普惠3月每满4万元、金普惠6月每满2万元、金普惠12月每满1万元均可获得一次砸蛋机会，不限次数多投多得。</p>
+    <p>您有<span id="count">0</span>次砸蛋机会，想获取更多？<a href="/borrow" class="go-lend">去出借</a></p>
+    <ul class="break-eggs">
+        <li class="eggs">
+            <div class="egg"></div>
+            <div class="hammer"><img src="img/deposiTube/hammer.png" alt="" /></div>
+        </li>
+        <li class="eggs">
+            <div class="egg"></div>
+            <div class="hammer"><img src="img/deposiTube/hammer.png" alt="" /></div>
+        </li>
+        <li class="eggs">
+            <div class="egg"></div>
+            <div class="hammer"><img src="img/deposiTube/hammer.png" alt="" /></div>
+        </li>
+    </ul>
+    <a href="javascript:;" onclick="lookMyGift()" class="look-gift">查看我的奖品&nbsp;&gt;&gt;</a>
+</div>
+<div class="part2">
+    <div class="show-gift">
+        <div class="left">
+            <ul class="gift-list">
+                <li><img src="img/deposiTube/show-coupon-iphone.png" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-888.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-500.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-200.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-58.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-18.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-100.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-88.jpg" alt=""></li>
+                <li><img src="img/deposiTube/show-coupon-50.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="right">
+
+            <table cellpadding="0" cellspacing="0" border="0" class="lucky-list" >
+                <caption class="lucky-caption">
+                    <span>用户</span>
+                    <span>所获奖品</span>
+                    <span>获奖时间</span>
+                </caption>
+                <tbody id='luckyList'>
+                     <tr><td colspan="3">暂无中奖用户</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="part3">
+    <div class="role">
+        <h3>活动规则</h3>
+        <p>1、   活动时间2018年1月5日00点—2018年1月15日23点59分；</p>
+        <p>2、   活动期间单笔出借对应项目每满相应额度，均可获得一次砸蛋机会（不限次数多投多得），所获机会可在2018年1月15日23点59分之前进行使用，过期机会作废；</p>
+        <p>3、   本次活动所得现金奖励将于3个工作日内，发放到用户账户余额内；</p>
+        <p>4、   本次活动所得现金抵用券，有效期为15天，过期作废，出借时满足使用条件，需点击选择抵现券，方可抵现成功，若不点击选择抵用券，则不后补；</p>
+        <p>5、   iPhone X 256G苹果手机颜色随机，不可挑选，如用户在砸蛋活动中获得，请保持注册手机号畅通，客服人员会在活动结束后3个工作日内与您取得联系，核对信息后15个工作日内发放，如出现用户5个工作日内不接听电话导致无法取得联系的情况，视为用户自动放弃，过后不予补发；</p>
+        <p>6、   本活动最终解释权归金谷财行所有，如有疑问请拨打400-770-6678客服电话询问。</p>
+        <h3 id="myGift" class="mt50">我的奖品</h3>
+        <div>
+            <table cellpadding="0" cellspacing="0" border="0" class="my-gift-list">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>奖品</th>
+                    <th>获奖时间</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="ohy">
+            <table cellpadding="0" cellspacing="0" border="0" class="my-gift-list mt0">
+                <tbody id="myGiftList">
+                <tr><td colspan="4" style="border-left-color: #fff;">暂无中奖记录</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <img src="img/deposiTube/footer-bg.jpg" alt="">
+</div>
+<div class="modal-mask dn"></div>
+<div class="modal-box dn">
+    <div class="modal-close"></div>
+    <div class="modal-context">
+        <img src="" alt="" id="giftImg">
+        <p class="modal-gift">恭喜您，获得<span id="showGift"></span></p>
+        <p class="modal-gift-show">中奖记录中查看</p>
+    </div>
+    <div class="modal-error dn">
+        <div class="error-title">温馨提示</div>
+        <div class="error-context"></div>
+    </div>
+</div>
+<div class="tips-box">
+    <a href="javascript:;" class="tips-btn" id="btnTips">小贴士</a>
+    <div class="tips dn" id="tips">
+        <div class="tips-close" id="close"></div>
+        <div class="tips-title">出借小贴士</div>
+        <div class="tips-context">因砸蛋可获得现金抵用券，建议在满足可以获得砸蛋机会的前提下分开出借，使您的出借利益最大化。</div>
+    </div>
+</div>
+
+<!-- 此处引用底部 -->
+
+<script src="js/jquery_1.11.0.min.js"></script>
+<script src="/static/js/config.js"></script>
+<script src="/static/js/md5.js"></script>
+<script src="/static/js/cookie.js"></script>
+<script src="/static/js/ajaxPrams.js"></script>
+
+<script>
+    var myParams = getParams();
+    $(function () {
+        prizeQueryList();
+        if(myParams.tokenId){
+            luckyDrawNumAndList();
+        }
+    });
+
+    $('#btnTips').click(function(){
+        $('#tips').removeClass('dn');
+    });
+
+    $('#close').click(function(){
+        $('#tips').addClass('dn');
+    });
+
+    // 关闭弹框
+    $('.modal-close').on('click',function(){
+        $('.modal-box,.modal-mask').addClass('dn');
+        eggInit();
+        prizeQueryList();
+        if (myParams.tokenId) {
+            luckyDrawNumAndList();
+        }
+    });
+
+    function ltIE9() {
+        //var browser = navigator.appName;
+        var bv = navigator.appVersion;
+        var v = bv.split(";");
+        if (v.length > 1) {
+            var trim_bv = parseInt(v[1].replace(/[ ]/g, "").replace(/MSIE/g, ""));
+            if (trim_bv < 9) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    var eggInit=function(){
+        $('.modal-context').removeClass('dn');
+        $('.modal-error').addClass('dn');
+        $('.eggs').each(function() {
+            var _this=$(this),
+                    egg=_this.find('.egg')
+            _this.find('.hammer').css(
+                    {
+                        'animation':'hammerbefore 1s',
+                        'animation-iteration-count':'infinite'
+                    }
+            );
+            egg.removeClass('open');
+        });
+    }
+
+    function lookMyGift(){
+        if(cookie.getCookie('tokenId')){
+            window.location.href = "#myGift"
+        }else{
+            window.location.href = "/login"
+        }
+    }
+
+    /**
+     * [showModalContext 显示错误信息]
+     * @param  {[type]} msg [错误信息]
+     * @return {[type]}     [description]
+     */
+    function showModalError(msg){
+        $('.modal-box,.modal-mask').removeClass('dn');
+        $('.modal-context').addClass('dn');
+        $('.modal-error').removeClass('dn');
+        $('.error-context').html(msg);
+    }
+
+    var eggGiftArray = [
+        {msg: 'iPhonex(256G)', money: 999, img: 'coupon-iphone'},
+        {msg: '888元现金', money: 888, img: 'coupon-888'},
+        {msg: '500元现金抵用券', money: 500, img: 'coupon-500'},
+        {msg: '200元现金抵用券', money: 200, img: 'coupon-200'},
+        {msg: '58元现金', money: 58, img: 'coupon-58'},
+        {msg: '18元现金', money: 18, img: 'coupon-18'},
+        {msg: '100元现金抵用券', money: 100, img: 'coupon-100'},
+        {msg: '88元现金', money: 88, img: 'coupon-88'},
+        {msg: '50元现金抵用券', money: 50, img: 'coupon-50'}
+    ];
+    function luckyDrawNumAndList () {
+        var myParams = getParams();
+        myParams.activeType = ACTIVE_TYPE
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            data:myParams,
+            url: BASE_URL + '/api/web/activity/luckyDrawNumAndList',
+            success: function (data) {
+                var html = '<tr><td colspan="4">暂无中奖记录</td></tr>';
+                if(data.code == 100 && data.data != null ){
+                    var luckyList = data.data.luckyList;
+                    var number = data.data.number;
+                    $("#count").text(number)
+                    if(luckyList && luckyList.length > 0) {
+                        html = '';
+                        for (var i = 0; i < luckyList.length; i++) {
+                            html += '<tr><td>' + (i + 1) + '</td><td>' + luckyList[i].prizeName + '</td><td>' + luckyList[i].createTime + '</td><td>'
+                                if(luckyList[i].status == 1){
+                                    html += '已发放'
+                                }else{
+                                    html += '未发放'
+                                }
+                            html += '</td></tr>'
+                        }
+                    }
+                }else
+                    showModalError(data.msg, false);
+                $("#myGiftList").html(html);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                if(XMLHttpRequest.status == 401){
+                    showModalError('用户未登录，请登录');
+                    cookie.setRedirectTo(window.location.pathname);
+                    window.location.href="/login";
+                }else{
+                    showModalError('网络错误，请重试', false);
+                }
+            }
+        });
+    }
+    function prizeQueryList () {
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            data:{
+                activeType:ACTIVE_TYPE,
+                pageNum:"1",
+                pageSize:"8"
+            },
+            url: BASE_URL + '/api/web/activity/prizeQueryList',
+            success: function (data) {
+                var html = '<tr><td colspan="3">暂无中奖用户</td></tr>';
+                if(data.code == 100){
+                    //中奖名单
+                    var luckyDrawWinningList = data.data.luckyDrawWinningList;
+                    //奖品列表
+                    var prizeList = data.data.prizeList;
+                    if(luckyDrawWinningList && luckyDrawWinningList.length > 0) {
+                        html = '';
+                        for (var i = 0; i < luckyDrawWinningList.length; i++) {
+                            html += '<tr><td>' + luckyDrawWinningList[i].mobile + '</td><td>' + luckyDrawWinningList[i].prizeName + '</td><td>' + luckyDrawWinningList[i].createTime + '</td></tr>'
+                        }
+                    }
+                }else
+                    showModalError(data.msg, false);
+                $("#luckyList").html(html);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            //    showToast('网络错误，请重试', false);
+            }
+        });
+    }
+    //砸蛋
+    var eggClick=function(){
+
+        var objDom=$(this);
+        $('.hammer').unbind('click');
+        var myParams = getParams();
+        myParams.activeType = ACTIVE_TYPE
+        myParams.actClientType = myParams.clientType
+          $.ajax({
+              url: BASE_URL + '/api/web/activity/luckyDraw',
+              type: 'POST',
+              dataType: 'json',
+              data: myParams,
+              success: function (data) {
+                  //成功
+                  if(data.code == 100){
+                      var egglight=objDom.siblings('.egg'),
+                          eggshake=0;
+                      if(ltIE9()){
+                          //直接走起
+                          egglight.addClass('open');
+                      }else{
+                          $(objDom).css(
+                              {
+                                  'animation':'forhammer 1s 1'
+                              }
+                          );
+                      }
+                      var prizeModel = data.data;
+                      //蛋晃
+                      var t1=setInterval(function(){
+                          eggshake++;
+                          egglight.css({'animation-play-state':'running'});
+                          setTimeout(function(){
+                              egglight.addClass('open');
+                              egglight.css({'animation-play-state':'paused'});
+                              if(eggshake>=1){
+                                  clearTimeout(this);
+                                  clearInterval(t1);
+                                  for(var i=0;i<eggGiftArray.length;i++){
+                                      // 此处需要判断data  奖品金额
+                                      if(eggGiftArray[i].money == parseInt(prizeModel.prizeMoney)){ //activity/doubleEgg
+                                          $('#giftImg').attr('src', 'img/deposiTube/'+eggGiftArray[i].img+'.jpg');
+                                          $('#showGift').html(eggGiftArray[i].msg);
+                                      }
+                                  }
+                                  $('.modal-box,.modal-mask').removeClass('dn');
+                                  $('.hammer').click(eggClick);
+                              }
+                          },350);
+                      },1000);
+
+                  }  else{
+                      showModalError(data.msg, false);
+                      $('.hammer').click(eggClick);
+                  }
+              },
+              error: function (XMLHttpRequest, textStatus, errorThrown) {
+                  if(XMLHttpRequest.status == 401){
+                      showModalError('用户未登录，请登录');
+                      cookie.setRedirectTo(window.location.pathname);
+                      window.location.href="/login";
+                  }else{
+                      showModalError('网络错误，请重试', false);
+                  }
+              }
+          })
+    }
+    $('.hammer').click(eggClick);
+
+    $('.eggs').hover(function(){
+        var _this=$(this);
+        _this.find('.hammer').show().css(
+            {
+                'animation':'hammerbefore 1s',
+                'animation-iteration-count':'infinite'
+            }
+        );
+    },function(){
+        $(this).find('.hammer').hide();
+    });
+</script>
+</body>
+</html>

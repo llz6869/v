@@ -1,0 +1,31 @@
+.protocol{
+  width: 1000px;margin: 40px auto; padding: 40px 100px 80px;background-color: #fff;
+  h1{padding: 10px 0 40px;font-size: 20px;color: $c3;text-align: center; }
+  h2{padding: 20px 0;font-size: $px14;color: $c3;font-weight: bold;line-height: 24px; }
+  dl{
+    dt{padding: 20px 0;font-size: $px18;color: $c3; }
+    dd{
+      p{padding: 8px 0;font-size: $px14;color: $c6;line-height: 24px;}
+    }
+  }
+
+  .protocol-borrow-tb{
+    width: 1000px;margin: 20px auto;
+    th,td{width: 25%;height: 58px;text-align: center;font-size: $px14;color: $c3;background-color: #fafafa;border: 1px solid #eee; }
+    td{background-color: $cf;}
+    &.rate-tb{
+      width: 500px;margin-left: 0;
+      td{padding-left:40px;text-align: left;}
+      td:first-child{width: 137px;}
+      td:last-child{width: 360px;}
+      .bgcfa{text-align: center;background-color: #fafafa;font-weight: bold;}
+    }
+  }
+  .h6{margin-top: 40px;font-size: $px14;color: $c6;}
+  p.mt60{margin-top: 60px;}
+  p.mt50{margin-top: 50px;}
+  .borrow-h2{text-align: right;color: $c6;font-weight: normal; }
+  .tdt2{text-indent: 2em;}
+  .fwb{font-weight: bold;}
+  .commitment{margin: 50px 0;font-size: $px14;color: $c6;font-weight: bold;}
+}

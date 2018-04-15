@@ -1,0 +1,764 @@
+.mt40{margin-top: 40px;}
+$cdf:#dfdfdf;
+
+/* app下载二维码 start */
+.app-download img{display:$db;@extend .m-auto;width:131px;height:131px;}
+/* app下载二维码 end */
+
+/*账户总览 start*/ 
+.pandect-layer{
+    float:left;width:976px; margin: 40px 0 0 8px; background: #f1f1f1;
+    .pandect{ 
+        background-color:$cf;padding:20px 30px; margin-bottom: 15px;
+        h3{font-size:$px18;color:$c0;}
+        .a1{
+            color:$c6; display: block; text-align: center;padding: 30px;
+            &:hover{ color: $c0;}
+        }
+        &.mb40{margin-bottom: 40px;}
+    }    
+    .bdldf{border-left:1px solid $cdf;}
+    .bddf{
+        @extend .bdldf;border-right:1px solid $cdf;
+        span{padding-left: 0;}
+    }
+    .income{
+        margin:20px auto;padding:40px 0;border-top:1px solid $cdf;border-bottom:1px solid $cdf;
+        li{
+            float:left;width:33%;height:100px;padding-top:20px;text-align:center;color:$c0;
+            div{font-size:30px;}
+            span{
+                display:block;padding-top:10px;padding-left: 21px;font-size:$px14;
+                &.db{position: relative;}
+            }
+
+            .income-tips{
+                display:inline-block;width:16px;height:16px;margin:0 5px;background:#fff url(/static/images/account/tips.png) center center no-repeat;
+                &:hover{
+                    &::before{content: '总资产=可用余额+在投金额+投资冻结+提现冻结';position: absolute;top: -40px;left: 17px;width: 331px;height: 44px;line-height: 36px;background: url(/static/images/account/income-tips-bg.png) center center no-repeat; }
+                }
+            }
+            em{font-size: $px14;}
+            &:last-child{
+                span{padding-left:0;}
+            }
+        }
+    }
+    .received{
+        padding:10px 0 30px;font-size:$px14;color:$c3;
+        span{margin-right:50px;}
+        em{font-size: $px14;}
+    }
+
+    /*个人信息 start*/ 
+    .personal{
+        padding: 30px;
+        /*基本信息与券 start*/ 
+        .portrait{
+            width: 450px;
+            .avatar{width: 132px;height: 132px;border-radius: 50%;background-color: #fff7f3;text-align: center;overflow: hidden;}
+            .information{
+                float:left;margin:5px 0 0 20px;
+                .phone{font-size:16px;color:$c3;}
+            }
+            .vali{
+                padding:20px 0;
+                span{margin-right:10px;}
+                .cef6c2d{color: $cef6c2d;}
+            }
+        }
+        /*基本信息与券 end*/
+
+        /*资产状况表 start*/ 
+        .balance{
+            border-left:1px solid $cdf;
+            p{
+                margin-left:30px;padding-left:50px;font-size:$px14;color:$c6;    
+                
+                &.p20{
+                    padding:20px 0 20px 50px;
+                    span{margin-right:30px;}
+                }
+                .fz30{font-size:30px;color:$c0;}
+                em{font-size: $px14;}
+            }
+            .btn{display: $dib; }
+        }
+        /*资产状况表 end*/
+    }
+    /*个人信息 end*/ 
+
+    /*出借记录、项目推荐table start*/ 
+    .record-list{
+        width: 918px; margin:15px 0 0;color:$c6; border:0; line-height: 64px;
+        th,td{text-align:$ta-c; color:$c6; font-size: $px14;}
+        th{font-weight: normal;}
+        th:nth-of-type(1){width: 180px;}
+        th:nth-of-type(2){width: 110px;}
+        th:nth-of-type(3){width: 120px;}
+        th:nth-of-type(4){width: 170px;}
+        th:nth-of-type(5){width: 200px;}
+        th:nth-of-type(6){width: 148px;}
+        thead tr{background-color:#fafafa;}
+        tbody tr:nth-child(even){background-color:#fafafa;}
+        .hide{
+            display: $db; padding: 0 10px; width: 160px; text-align: left; white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+            a{ 
+                color: $c6;
+                &:hover{ color:$c3;}
+            }
+        }
+        .cef6c2d{color: $cef6c2d;}
+        tbody td.no-data-show{padding: 30px 0;text-align: center;background-color: $cf;}
+    }
+    /*出借记录、项目推荐table end*/ 
+
+    /*进度 start*/
+    .percent{
+        width: 160px;height:$px14; padding: 0 10px;font-size:$px14;line-height:$px14;text-align: $ta-c;
+        .bar{
+            width: 100px;height: 4px;margin: 5px 0;background:#e8e8e8;
+            .bar-orange{background:$cef6c2d;height: 4px;}
+        }
+        .hundred{width: 60px;}
+    }
+    /*进度 end*/ 
+}
+/*账户总览 end*/ 
+
+
+
+
+/* 主体 start */
+.account{
+    float:left;width:928px;margin:40px 0 40px 8px;padding:0 24px;background-color:$cf;
+    .cef6c2d{color:$cef6c2d;}
+    .mr20{margin-right:20px;}
+
+    /* 头部切换 start */
+    .account-tabs{
+        padding:25px 0 15px;border-bottom:2px solid $cf2;clear: both;overflow: hidden;
+        li{
+            float:left;width:86px;color:$c3;font-size:$px18;line-height:$px18;cursor: pointer;
+            &.active{border-color:$cef6c2d;}
+        }
+        &.welfare{border:0;}
+    }
+    /* 头部切换 end */
+    
+    /*选择 start*/ 
+    .choose-layer{padding: 20px 6px 30px;}
+    /*选择 end*/
+
+    /*出借记录 table start*/ 
+    .borrow{
+        width: 916px;margin: 0 auto;padding: 0 6px; border:0; line-height: 64px;
+        th,td{text-align:$ta-c; color:$c6; font-size: $px14;}
+        th{font-weight: normal;}
+        th:nth-of-type(1){width: 140px;}
+        th:nth-of-type(2){width: 100px;}
+        th:nth-of-type(3){width: 80px;}
+        th:nth-of-type(4){width: 130px;}
+        th:nth-of-type(5){width: 140px;}
+        th:nth-of-type(6){width: 114px;}
+        th:nth-of-type(7){width: 134px;}
+        th:nth-of-type(8){width: 150px;}
+        thead tr{width: 100%; background-color:#fafafa;}
+        tbody tr:nth-child(even){width: 100%; background-color:#fafafa;}
+        .hide {
+            display: $db;width: 140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+            a{ 
+                color: $c6;
+                &:hover{ color:$c3;}
+            }
+        }
+        .cef6c2d{color: $cef6c2d;}
+        tbody td.no-data-show{padding: 30px 0;text-align: center;background-color: $cf;}
+    }
+    /*出借记录 table end*/ 
+
+    /*借款记录 table start*/ 
+    .lend{
+        width: 916px;margin: 0 auto;padding: 0 6px; border:0; line-height: 64px;
+        th,td{text-align:$ta-c; color:$c6; font-size: $px14;}
+        th{font-weight: normal;}
+        th:nth-of-type(1){width: 140px;}
+        th:nth-of-type(2){width: 100px;}
+        th:nth-of-type(3){width: 80px;}
+        th:nth-of-type(4){width: 130px;}
+        th:nth-of-type(5){width: 140px;}
+        th:nth-of-type(6){width: 114px;}
+        th:nth-of-type(7){width: 134px;}
+        th:nth-of-type(8){width: 100px;}
+        th:nth-of-type(9){width: 150px;}
+        thead tr{background-color:#fafafa;}
+        tbody tr:nth-child(even){background-color:#fafafa;}
+        .hide {
+            display: $db;width: 140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+            a{ 
+                color: $c6;
+                &:hover{ color:$c3;}
+            }
+        }
+        .cef6c2d{color: $cef6c2d;}
+        tbody td.no-data-show{padding: 30px 0;text-align: center;background-color: $cf;}
+    }
+    /*借款记录 table end*/ 
+    
+    /*资金记录table start*/
+    .capital{
+        width: 928px; border:0; line-height: 64px;
+        th,td{text-align:$ta-c; color:$c6; font-size: $px14;}
+        th{font-weight: normal;}
+        th:nth-of-type(1){width: 170px;}
+        th:nth-of-type(2){width: 100px;}
+        th:nth-of-type(3){width: 120px;}
+        th:nth-of-type(4){width: 96px;}
+        th:nth-of-type(5){width: 86px;}
+        th:nth-of-type(6){width: 356px;}
+        thead tr{background-color:#fafafa;}
+        tbody tr:nth-child(even){background-color:#fafafa;}
+        .hide{display: $db;width: 356px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        tbody td.no-data-show{padding: 30px 0;text-align: center;background-color: $cf;}
+    }
+    /*资金记录table end*/
+    /* 资金记录 筛选 start */
+    .capital-choose{
+        margin: 15px 0 30px;
+        .choose li{width: 90px;}
+    }
+    /* 资金记录 筛选 end */
+
+    /* 资金记录 日历 start */
+    .calendar-box{margin: 30px 0 0;color: $c6;font-size: $px14;}
+    /* 资金记录 日历 end */
+
+    /* 我的福利 */ 
+    .welfare{
+        .welfare-tabs{
+            background-color: #fafafa;
+            li{
+                float:left;width:33%;padding:24px 0 20px;font-size:$px18;color:$c3;text-align:center;border-top:4px solid #fafafa;cursor: pointer;               
+                &.active,&:hover{background-color: $cf;border-top-color:$cef6c2d;transition:all .35s;}
+            }
+        }
+
+        .welfale-choose{
+            margin:30px auto;
+            li{
+                float:left;padding:0 20px;font-size:$px14;color:$c6;border-left:2px solid #eee;cursor:pointer;
+
+                &:first-child{border:0;}
+                &.active,&:hover{color:$cef6c2d;transition:all .35s;}
+            }
+        }
+        .welfare-list{
+            .welfare-top{
+                height: 45px;@extend .m-auto;padding:19px;background-color:#bbb;color:$cf;clear:both;overflow:hidden;
+                
+                .tcl{
+                    float:left;margin-top: -10px;font-size:20px;
+                    
+                    span{
+                        font-size:42px;
+                    }
+                }
+                .tcc{
+                    float:left;margin-left:20px;font-size:$px18;
+
+                    .tcct span{
+                        padding:0 5px;font-size:$px12;border:1px solid $cf;border-radius:5px;
+                    }
+                }
+                .tcr{float:right;}
+            }
+            .welfare-bottom{
+                padding:13px 0;background:$cf url(/static/images/account/welfare-bg1.png) top left repeat-x;border:1px solid #eee;border-top:none;border-radius:0 0 10px 10px;
+                
+                div{padding:5px 19px;font-size:12px;color:$c6;line-height: 12px;}
+                .welfare-bottom-range{min-height: 30px;}
+            }
+            li{
+                float:left;width:290px;margin:10px 0;border-radius:10px;overflow:hidden;
+                
+                &:nth-child(3n-1){margin:10px 23px;}
+            }
+            &.useing{
+                .welfare-top{background-color:#ff874e;}
+                .welfare-bottom{background-image:url(/static/images/account/welfare-bg2.png);}
+            }
+            &.used{
+                li{
+                    position:relative;
+                    .posa{position:absolute;bottom:1px;right:1px;width:109px;height:98px;background:url(/static/images/account/welfare-used.png) bottom right no-repeat;}
+                }
+            }
+        }
+    }
+
+
+    /*我的邀请 抵用券 start*/ 
+    .img-tc{margin:25px auto;padding:25px 0;text-align:center;}
+    .invite-tabs{
+        padding:15px 0;font-size:$px18;color:$c6;border-bottom:1px solid #eee;
+        span{display:$dib;margin:3px 0 0 20px;padding:2px 0 2px 20px;font-size:$px14;border-left:1px solid #eee;line-height:$px14;}
+    }
+    /*我的邀请 抵用券 end*/ 
+
+    /*我的邀请 分享方式 start*/ 
+    .invite-share{
+        @extend .m-auto;padding:50px 0;
+        li{
+            float:left;width: 25%;text-align:center;
+            .share{
+                display:$db;width:60px;height:60px;margin:0 auto 20px;text-align:center;background: $cf url(/static/images/account/invite-share.png) center center no-repeat;background-position:0 0;
+                &.webchat{background-position:0 0;}
+                &.weibo{background-position:-60px 0;}
+                &.qq{background-position:-120px 0;}
+                &.qzone{background-position:-180px 0;}
+                &.link{background-position:-240px 0;}
+            }
+        }
+        .copy-that{color: $c3;}
+    }
+    /*我的邀请 分享方式 end*/
+
+    /*我的邀请  邀请列表 start*/ 
+    .invite-tb{
+        width: 928px; border:0; line-height: 64px;
+        th,td{text-align:$ta-c; color:$c6; font-size: $px16;}
+        th{font-weight: normal;background-color:#fafafa;}
+        th:nth-of-type(1){width: 190px;}
+        th:nth-of-type(2){width: 268px;}
+        th:nth-of-type(3){width: 250px;}
+        th:nth-of-type(4){width: 220px;}
+        tbody tr:nth-child(even){background-color:#fafafa;}
+
+        .td-no-data{padding: 30px 0;background-color: $cf;}
+    }
+    /*我的邀请  邀请列表 end*/
+
+    /*我的消息 start*/ 
+    &.msg{
+        padding:0;
+        .account-tabs{margin:0 24px;}
+        
+        /*全部标记为已读 start*/ 
+        .all-read{color: #ef6c2d; font-size: $px16; cursor: pointer;}
+        /*全部标记为已读 end*/
+
+        /*消息列表 start*/ 
+        .msg-list{
+            margin-top:20px;
+            li{
+                margin:0 30px;padding:15px 0;color: $c3;border-bottom:1px solid #e9e9e9;clear:both;overflow:hidden;
+                &.active{
+                    margin:0;padding:15px 30px; transition: box-shadow .35s ease;box-shadow:0 0 15px #d9d9d9;
+                }
+                &.seen{color: $c9;}
+                .msg-check{margin-top: 3px;}
+                .msg-title{width: 695px;}
+                .msg-time{width: 100px;}
+                .msg-content{width: 100%;margin: 30px 0 40px;text-indent: 25px;}
+            }
+        }
+
+        /* 没有数据 */
+        .msg-no-data{padding: 30px 0;text-align: center;color: $c6; }
+        /* 没有数据 */
+
+        /*消息列表 end*/
+
+        
+
+        /*全选及标记为已读 start*/
+        .choice{ 
+            width: 100%;padding:30px 0 30px 30px; color: $c6; line-height: 15px;
+            .input-p{
+                padding-right: 26px; cursor: pointer;
+                input{ margin-right: 10px;}
+                &:hover{ color: $c0;}
+            }
+            a{ 
+                color:$c6;
+                &:hover{color: $c0;}
+            }
+        }
+        /*全选及标记为已读 end*/ 
+
+    }
+    /*我的消息 end*/ 
+
+    
+    /*安全设置 start*/ 
+    .setting{
+        padding-bottom:80px;
+
+        li{
+            height:75px;border-bottom:1px solid #e9e9e9;color:$c6;
+
+            .tcl,.tcc{display:$dib;margin-bottom:20px;vertical-align: middle;}
+            .tcl{margin-left:15px;}
+            .tcc{
+                margin-left:100px;
+
+                &.mlp{margin-left:130px;}
+            }
+            .fl{margin:26px 0 0 0;}
+            .fr{
+                margin:26px 135px 0 0;
+
+                &.cp{cursor:pointer;}
+            }
+        }
+        .progress{float:left;width:570px;height:7px;margin:34px 0 0 65px;background: #f4f4f4;border-radius:10px;overflow:hidden;
+            .progress-bar{height:7px;background:$cef6c2d;border-radius:10px 0 0 10px;transition:width .35s ease;}
+        }
+        .setting-phone{display:$dib;width:28px;height:29px;margin-top:25px;background:$cf url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAdCAYAAACnmDyCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNjU1NDI1OEI4QjkxMUU3QTQyRkM0QkY1MTQxNEM2QyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNjU1NDI1OUI4QjkxMUU3QTQyRkM0QkY1MTQxNEM2QyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU2NTU0MjU2QjhCOTExRTdBNDJGQzRCRjUxNDE0QzZDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU2NTU0MjU3QjhCOTExRTdBNDJGQzRCRjUxNDE0QzZDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+QYz/vAAAAShJREFUeNpifJ+jywAECkA8AYhdgZiLgTjwDYh3A3EBED9gAhK8QLwfiG8CsSoQCxGJVaF6QHp5WYBENBBfBeJyBtLAe6gebZAZIBdpAvEeBvIBSK8WyEWsQPwTTbIDiENxaFwNxBVIfJBeFhYciidBNWADz7EJ4jLoGRQTDZgYqARGDRo1aNSgwWOQIBRTZFAVED+B4jp8ClnwyIkBcQm0kGeAluszgPgVqS7igxajb6D4B1QMp4v+AjEbFrk7QHwUiM8A8X8gPgcVQwcgvX9BBt0GYnMcFoUBsS+UvRWHGjMgPgXy2lIgdgLiUiDmQFP0D4g3QvEfNDmQ2mKo3iUgg94CsQsQ+wHxd6g3iMEgtQFQvW9ZkGLEFlrvsxOZBn9C638wAAgwAK3/Q83aFJCqAAAAAElFTkSuQmCC) center center no-repeat;}
+        .setting-bank{display:$dib;width:28px;height:29px;margin-top:24px;background:$cf url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAdCAYAAAC5UQwxAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMEJGMTVCREI5MjExMUU3OEIxREQ0M0M3RUVEMDEwOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMEJGMTVCRUI5MjExMUU3OEIxREQ0M0M3RUVEMDEwOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUwQkYxNUJCQjkyMTExRTc4QjFERDQzQzdFRUQwMTA5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUwQkYxNUJDQjkyMTExRTc4QjFERDQzQzdFRUQwMTA5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+drjv6gAAAZBJREFUeNpifJ+jy0AGYILS/8jVSAowB+KrQHwZiE1oaSEbELcC8REgfgnET4H4OBA3AjErtS3UB+JTQFwAxEVA7AjE7kBcCMQlQHwSiHWpYSELEFdBLfsGxAZAPBmI/0PxFKjYDyA+A1XLQq6FGtDgq4NiWyC+jUXdbagcTN0RqF6iLWSCBt05aLyBEkYnEP/F47i/UDUmUD3noGYwEbJQGYj3A3EX1ABQirxCQsK6AtXTDcX7gFgRm4WMQJwJxBeBWAiqCZT6fpORbUB66oHYEohFoWamQe0AWygLxDuhiWEKNFjOM1AOQInIGIhnAvF0qB2yjMCS5gmQIc1AH/AMlITDgViKnhYeRRPkgJYcn/Fo5ILGyVc8anigZe03QtmiAYiXEXBpPxDPIKBmBjSlYpQk6IAPiAUIGAZyPT8BNQKwlElpbUERGLVw1MJRC0cthDdufxHQB2pA/SGg5g82NdjK0h4iyslmIkKnCpvDYRaCamYlNDk1IkJIhwg1hkjsUzALQY0mJzpEYTVAgAEAfRxMPXsSzW8AAAAASUVORK5CYII=) center center no-repeat;}
+        .setting-pwd{display:$dib;width:28px;height:28px;margin-top:24px;background:$cf url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGOTQyOURCNEI5MjExMUU3QkVBOTkxREUxNTAyNDQ4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGOTQyOURCNUI5MjExMUU3QkVBOTkxREUxNTAyNDQ4QSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY5NDI5REIyQjkyMTExRTdCRUE5OTFERTE1MDI0NDhBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkY5NDI5REIzQjkyMTExRTdCRUE5OTFERTE1MDI0NDhBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8++fW8LAAAAhlJREFUeNqslksoRGEUx6+3hVKUkpQUU4qF8s6CBSWibJBSphQRKSzMwsKKhfKKjbUFEQopUiTKozELlKhZUMorKcbrf+o/ddPM9d3rnvrNfDP3ft/5vnPP+Z8b8tCeqRlYCKgA9aAYJIE3cAbWwRi4MVog1OBaCtgFs+AZdIJcUA5mQAm4BB1GDsKD/J8BtsABSAV3v67vgAnQAKZBPBgIGIIAIYoCR+AENIJvzdhKwSqoBBsqIWoCcaBVYXGxTZ5iQPUZ1IFxxl3VRkAhSFRxkA22NXN2BW6BQ8VBLHjSzJskQoKZNDVrn0QpTa2YkwUY8ATy3cb0FHMzg8xwCB6BB3SDMP8JZDAPcsAgq/fF4iliQBFwsdJrxEE7JSAPeG0IlZx+BeyLjEhoWrhzr43Pw8s1neIgDez9MSGNYXwmMk7/Y46smS4OIsCHwY0Oip5oVBXRGAKHwTxZM1LETjIgC5wGuXFet/i3rk8sszfUBpknKupWqYMyNh298Ml4mA9Ts9pw9ItZuabsYA30MSz6VtrDtqlZ6Wh662VGLDEs0WyTUpj5dpzgmoV4TydzVNtcyvS/T+AvHOl0k/zdplpxcoJ3m1VVv3mffFxQoI4VJi2wJlSsAJxLoXVh0E/189i0+2RW+pA4ELleZEFNURbeeaMviHS/sop/2xczy8WIVPvfi8L45tZMEYuwuHMfQy5vfqOiRz8CDAC9tIbqVND+igAAAABJRU5ErkJggg==) center center no-repeat;}
+
+        
+    }
+
+    .setting-form{
+        // padding:30px 0;
+        .account-form-group{
+            width:438px;height:20px;margin:30px auto;padding:15px 20px;border:1px solid #eee;
+            input{
+                width: 255px;
+                &.w150{width: 150px;}
+            }
+            .tr{display:$dib;width:100px;text-align:right;}
+            &.nobd{width:480px;padding:14px 0;border:0;text-align:center;}
+            .setting-btn{width:100%;padding:18px 0;font-size:$px16;color:$cf;background-color:$cef6c2d;}
+            .phoneCode-btn{
+                float:right;width:100px;height:20px;color: $c6;background-color: #fff;cursor: pointer;border-radius: 0 8px 8px 0;
+                &.mt23{margin-top: -23px;}
+            }
+            em{display:$dib;margin:0 15px 0 0;padding:0 15px 0 10px;color:$cef6c2d;border-right:1px solid #eee;vertical-align: middle;}
+            &.unbind{@extend .nobd;height: auto;}
+            &.noipt{margin: 15px auto;border:0;}
+            .error{margin: 15px auto;font-size:$px14;color: $cef6c2d; }
+        }
+    }
+
+    // /*  */
+    // &.cash{
+    //     padding-bottom:80px;
+
+    //     .error{ margin-top: 6px;font-size:$px14;color: $cef6c2d; }
+    //     .account-tabs{
+    //         padding:25px 0 0;border-bottom:2px solid $cf2;overflow:visible;
+    
+    //         li{
+    //             position: relative;float:left;width:86px;margin-bottom:-2px;padding-bottom:15px;color:$c3;font-size:$px18;line-height:$px18;text-align: center;;
+    
+    //             .bdbp{position: absolute;left:0;bottom:0;width:86px;z-index:2;border-bottom:2px solid $cf2;}
+    //             &.active{
+    //                 .bdbp{border-color:$cef6c2d;}
+                    
+    //             }
+
+    //         }
+    
+    //         &.welfare{border:0;}
+    //     }
+
+    //     /*快捷充值 网银支付 table切换 start*/ 
+    //     .cash-tabs{
+    //         margin:30px 0 0 105px;clear:both;overflow:hidden;
+
+    //         ul{width:380px;}
+    //         li{
+    //             float:left;width:185px;height:37px;color:$c6;font-size:$px14;text-align:center;line-height:37px;border:1px solid #ddd;cursor: pointer;
+                
+    //             &.active{
+    //                 background-color:$cef6c2d;color:$cf;border-color:$cef6c2d;
+    //             }
+    //         }
+    //         .cash-tabsrecord{height:37px;margin-right:70px;color:$cef6c2d;font-size:$px14;line-height:37px;}
+    //     }
+    //     /*快捷充值 网银支付 table切换 end*/
+
+    //     /*快捷充值 网银支付 table切换内容 start*/ 
+    //     .cash-recharge{
+    //         width:660px;margin-left:105px;color:#747474;font-size:16px;
+    //         li{
+    //             height:26px;margin:30px 0;line-height:24px;
+    //             .fl{
+    //                 font-size:$px16;
+
+    //                 &:first-child{width:120px;font-weight:600;}
+    //                 &.w500{width:500px;}
+    //             }
+    //             .cash-tc{display:$dib;margin:0 0 17px 10px;vertical-align:middle;}
+    //             .account-form-group{
+    //                 position:relative;width:158px;height:24px;padding:0 10px;border:1px solid #ddd;
+
+    //                 input{width: 100%;}
+    //                 .input-addon{position: absolute;right:10px;top:0;}
+    //             }
+    //             &.limit{
+    //                 height:18px;line-height:18px;margin:-10px 0 0 120px;font-size:12px;
+    //                 span{
+    //                     padding-left: 20px;
+    //                     a{ color: $cef6c2d;}
+    //                 }
+    //             }
+    //             &.li-tc{margin:0 auto;height:auto;}
+    //             .cash-btn{height:26px;padding:0 10px;background-color:$cef6c2d;color:$cf;font-size:$px12;cursor: pointer;}
+    //             // .cash-submit{width:203px;padding:10px 0;text-align:center;color:$cf;background-color:$cef6c2d;cursor: pointer;}
+    //             .ml120{ width: 166px; margin-left:120px;}
+    //             .cash-account{display:$dib;width:21px;height:26px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAaCAYAAABYQRdDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRDI0Q0I5MUI5NTAxMUU3QkFBRTk1RUE4MDM3RjQzMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRDI0Q0I5MkI5NTAxMUU3QkFBRTk1RUE4MDM3RjQzMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZEMjRDQjhGQjk1MDExRTdCQUFFOTVFQTgwMzdGNDMxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZEMjRDQjkwQjk1MDExRTdCQUFFOTVFQTgwMzdGNDMxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+4IBJCgAAAXRJREFUeNqslE0oBVEYhs+9yE2u/yUlSeQnayvJT2QpsVGKhb/CRoqVLG0otjaiUFaSjbK7KXWVUHYWukVIQhHPV+eW5s49d86Yt56m5sx55syc832hp8lGZUgDDEIH1MI9nMI+HMkDRWsXKZOyDcJZWHHci0INjMCOfmFKwhZCZwbg0Ku03oMwme7nqaYhL9JlZZdVxDkmaRa0WEoLodkkLYFSZZ8qk/QDPn1Iv0zSV7jzIY1n2qhdS2GMArj1svsPFtJhL0fqHVqd/ylNxlnlldeKugRpCsdpxq+hDzbcBk21LxO7IA9GdaU96pqPm5ZvktZBO1RCmUbO8YSWx+DAbWLIpfVVwJyenCk3sMR/3TJJpfNsQq7lsZJu1Yv8x7lRY7DtQyjpgXMaS+SvtA3W1f8iTeUk+fkFXBMQUcFkOqy7fFBCyaJI+1WwKRZpecDSN5G+BCyNinQmYOmZlOkedMI8VEM+fFtIwrqjJXQRLPwKMADK5UxM+E3N+gAAAABJRU5ErkJggg==);}
+    //             .binded-bank{
+    //                 float:left;display:$dib;width:25px;height:25px;border-radius:50%;overflow: hidden;
+    //                 img{width: 100%;height: 100%;}
+    //             }
+    //         }
+    //     }
+    //     /*快捷充值 网银支付 table切换内容 end*/
+
+    //     .cash-withdraw{
+    //         margin-left:105px;
+
+    //         li{
+    //             position:relative;float:left;width:167px;height:64px;margin:13px 15px 13px 0;
+
+                
+    //             .cash-banklist{
+    //                 display:$db;width:167px;height:64px;background:$cf url(/static/images/account/cash-bankicon.png) center center no-repeat;background-position:0 0;
+
+    //                 &.icbc{background-position:0 0;}
+    //                 &.abc{background-position: -183px 0;}
+    //                 &.poc{background-position:-366px 0;}
+    //                 &.ccb{background-position:-549px 0;}
+    //                 &.bcm{background-position:0 -78px;}
+    //                 &.ecitic{background-position:-183px -78px;}
+    //                 &.bbj{background-position:-366px -78px;}
+    //                 &.cmb{background-position:-549px -78px;}
+    //                 &.cmbc{background-position:0 -156px}
+    //                 &.gdb{background-position:-183px -156px;}
+    //                 &.spdb{background-position:-366px -156px;}
+    //                 &.hxb{background-position:-549px -156px;}
+    //                 &.ceb{background-position:0 -235px;}
+    //                 &.cib{background-position:-183px -235px;}
+    //                 &.psbc{background-position:-366px -235px;}
+    //                 &.pab{background-position:-549px -235px;}
+    //             }
+
+    //             &.active{
+    //                 .cash-banklist::before{
+    //                     position:absolute;content:' ';top:5px;left:5px;width:14px;height:14px;color:$cf;background:$cef6c2d url(/static/images/public/right-icon.png) center center no-repeat;text-align:center;border-radius:50%;
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     .cash-tips{
+    //         margin:0 70px;padding:35px;background-color:#fcfcfc;
+            
+    //         p{font-size:$px14;color:$c9;line-height:2em;}
+    //     }
+
+    //     .cash-result{
+    //         padding:50px 0;background-color:$cf;
+    //         p{
+    //             height:44px;line-height:44px;text-align: center;
+                
+    //             &.p30{padding:30px 0;}
+    //         }
+    //         .cash-succ-icon{display:$dib;height:44px;padding-left:54px;background:$cf url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAgVBMVEUAAADvbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC0+ohmRAAAAKnRSTlMAd/gG8m3shkapIte4ElVP0C0dgQvJ4eWSZVIXsD+ym4pLN6RxvVkMCZA4Qi2UAAAB7klEQVQ4y51V2YKiMBAMSTgDCMiNcqg7M1v//4G7ExIENYs79aJpitCdrlSTB+SeexIOpY44uV5O/gXvSrECvXpG6iEBUIxxGjEWpfFYAEgOL6lBCFRWtg5lVgWEwTM35nBs9hhltgMeP0aPgB+RF4h84LgN1YBNDLCBersvPRBz4XS9dwxIrgkTxZJ3wHUO5ky4PpMQPtmBj1ClBKfbI0eOSjSBTXbRIJF6QMn2yayEJ9OxyBuwvgvLKbQegkFU4bQ637AUQ6B1ApoTD4VanjmAVW9dueQXtSzg/Q258+KrhJ9mN4qzehf0lqUnXZEk9oj1w2Tu/G8lF/kNJnDRbe6JQKrVKP/kt0wlaX99/6SN2jmFIA4i8hYiOISCvUdmoP9H1mnElhGtTmMpMIERxVJgj/nFXzBBqbNFvzSlhhGjbsrS7hZGeLrdi5Byjhl8mDpCummgKlAxLaS7REeV4HJrshAStpboSvydI7lsdbKy6IRp8a+vVQwAwcb+ANCLvlbbC+sCgmwggEZf2PbBCmrwjzX3g9NmsYInk2k4ErtTUUugPN9N5tm+Ah+AOA3XsAL4+KmdBfFLYwzcWSW8b7TQJ46j0XI/0/MlYHejo6h/bOb7Y+L9AWQebW47j7bWVaPNBM/fDk3fODT3x/EfPd5JTmhjl4YAAAAASUVORK5CYII=) left center no-repeat;}
+    //         .cash-succing-icon{display:$dib;height:44px;padding-left:54px;background:$cf url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAgVBMVEUAAADvbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC0+ohmRAAAAKnRSTlMA+kZs7AdP9lQdEs8rq4aBCrh6IvHXsaeIVwWR4cov5cecZDkW2+6+dBAx6EscAAAB4ElEQVQ4y6VV2babMAy0zWJ2AoEAN4GwZOv8/weWNl5CgNDeOw9wLOvYsjQakTfsWHTITUrN/BCxHfkEVnC8gBds1dX2AdSl03iW5TVOWQPw7UXXfQKcU/fV5KZnINnPfZ0MpmG9Wy3DROa8W2MgvJAFeCEQT01HUIOswKA4Ts/lNlmFzV/PdkDtjxmlqFQeMhjkIwxkMicJQrKBEIkICeZly9kz8QzUF0FsBOL/jR6nr23nrxPY+CuQkn9AimLkJIfmQzB4k2IHjbrUBd8RhlquqxNAddGtIwduD7mswUiEUqx64OxTXCXlD4B/BSKxLBGNJkf0yA2P8bYcscpoM34p3csyH0iOQARF72TEQDuZrP5JMSbeg5yY8OQTLPGTLBBmWReYhEJsbsEC/S9nFcY6dBjygdsIkOvUrUOnLkKkkrEMVxeFoX3eQosVBomWasEUkS58OXjvhkESSVP0iHaJ1x0SRVFNfu+Ecu5bgQea/LqtBop4lgIqNnv404atKMJfk16KgUg37FQKHA7T2CnX6gqkSgpmIhO0QBY+2NCwvjOBK5uJDKm0fDl3KPhSgm2KalkY3b5Lav/eGc2yMG5L7lzMvVUx//aY2B5A66Mt+DPaAqdsxWj78dDcHse/AXKuMpsTd4WbAAAAAElFTkSuQmCC) left center no-repeat;}
+    //         .cash-fail-icon{display:$dib;height:44px;padding-left:54px;background: $cf url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAgVBMVEUAAADvbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC3vbC0+ohmRAAAAKnRSTlMA+gZPh2xG7PcSLAriyapTIvHXuKeCVc99HrB56LORSg7dPxaZYjQcwFcH2jvEAAABqUlEQVQ4y51V13LDMAwjJQ95xyOJm73T4v8/sK1bS5Yz7ARv4uF0JAiS1EPkOYvCZ/aLheNF9AxepdCBqryHVDkHkDhZGAgRhJmTAJjLu9RJCcT1Rzf0sYyBcnLLneXwXdGPCtdHPutHp0B6pDsIUmBqhzZglx7AZWzsf5Wkh5Cq+/cMLOkJtgyd9ySHS0/hIm81KZHSAFKU/ynBPw6RgxX+Ep3rJJ4mMm/8gFgMk0WMX59UWNIILFERRQraDzs56flF7rRPoCLykOgqYrDX03ev2Qk8cuCY3gCVLRjQdqshLpC1z5CBukuuAQ7bR4Y1FQhJv9e1sCSYLowNQhTkI6BRCOATQ4wjC/BL5JfS0AVqHN10r3j16Vx0SBfYSGdwPTFaJIcmZKRrtDbY+uD1OdxF1+1mBZxMPQ3RtPsHX4xSZxXVCmvDTuBZRjqw3cHLCifLSB2L7mI4vaJyZMailvlrJH3Nz9gLbX5rrPY43HSiwEGPlTWw8kw3uNSRGdjxq+CNJTO8viRjNnYxbhWm76xcs8yDh8v87TNhDtBy4AANnrb3j+b4c/wNZ7guGH7UGlwAAAAASUVORK5CYII=) left center no-repeat;}
+    //     }
+
+    // }
+
+    /* 个人账户的别特例子 start */
+    .half-title.mlr6{margin-left: 6px;margin-right: 6px;}
+
+    .payment-tb{
+        width: 100%;margin-top: 30px;
+        tr:nth-child(even){background-color: #f2f2f2;}
+        th{padding: 10px 0;font-size: $px14;color: $c6;text-align: center;background-color: #f2f2f2;font-weight: normal; }
+        td{
+            padding: 10px 0;font-size: $px14;text-align: center;color: $c6;
+        }
+    }
+}
+/* 主体 end */
+
+/* 风险评测 start */
+.appraisal{
+    color: $c6;
+    .h1{padding: 40px 0;font-size: $px18;text-align: center;}
+
+    /* 开始评测 start */
+    .begin-appraisal{
+        padding: 60px 0 60px 250px;background: #fff url(/static/images/account/appraisal.jpg) left center no-repeat;
+        .beging-title{font-size: 20px;color: $c3; }
+        .begin-text{width: 87%;padding:10px 0;font-size: $px16; }
+        .begin-appraisal-btn{width: 166px;}
+    }
+    /* 开始评测 end */
+
+    /* 评测问卷 start */
+    .ing-title{padding:20px 0;text-align: center;font-size: $px18;color: $c6;}
+    .ing-text{padding:0 0 20px;text-align: left;font-size: $px16;}
+    .ing-desc{padding:0 0 20px;text-indent: 2em;}
+    .ing-desc.fwb{font-weight: bold;}
+    .ing-tc{margin:20px 0;text-align: center;}
+    .appraisal-list{
+        margin: 30px;
+        li{padding: 10px 0;}
+        .item{
+            padding:10px 0 10px 22px;
+            .item-check{
+                display: $dib;float: left;width: 15px;height: 15px;margin: 3px 10px 0 0;border: 1px solid #787878;border-radius: 50%;cursor: pointer;
+                &.active{
+                    &::before{display: block;content: ' ';width: 11px;height: 11px;margin:2px auto; background-color: $cef6c2d;border-radius: 50%;}
+                }
+            }
+        }
+    }
+    /* 评测问卷 end */
+
+    /* 评测结果 start */
+    .appraisal-result{ 
+        margin:0 auto;padding: 60px 0 100px;
+        li{
+            padding: 15px 0;text-align: center;
+            span{display: $dib;width: 240px;font-size: $px18;color: $c6;
+                &:first-child{margin-right: 30px;text-align: right;line-height: 18px; }
+                &:last-child{text-align: left; }
+                &.appraisal-score{font-size: 36px;}
+                .appraisal-icon{
+                    display: $dib;width: 18px;height: 18px;margin-right: 5px;border-radius: 50%;
+                    &.type{background: #ffa423 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAMCAMAAABoQAyvAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAdzYisEz18+/g1NLHvY2Jc2leQSQGqzjizwAAAENJREFUCNcly0cCACEMQtEfdXpv3P+oE83bwAKAS9KMK1464BukDfdISrhDmswMFlUj5JxP9Ylq9VeVdNMUi3x3Qux+wGcCzlFoAo4AAAAASUVORK5CYII=) center center no-repeat;}
+                    &.level{background: #92e285 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAt0Pu6crIwa+Ge2lPOAiefskjAAAAPUlEQVQI12NgYFBiAIE0EMHz/wADg1bzf4tFDPv/////m4ETSE5gYKj//x0oG///K5D0F/zCwMAny3DxAQAs1BUfkMDXGQAAAABJRU5ErkJggg==) center center no-repeat;}
+                }
+            }
+        }
+    }
+
+    .appraisal-tips{padding:40px 60px 50px;border-top: 2px solid #e7e7e7;line-height: 1.4em;}
+    .appraisal-btn{
+        padding: 0 0 100px;text-align: center;
+        .btn{display: inline-block;width: 200px; }
+    }
+    /* 评测结果 end */
+}
+/* 风险评测 end */
+
+/* 公共按钮 start */
+.btn{
+    display: $dib;width: 166px;height: 38px;margin: 10px;padding: 0;text-align: center;line-height: 38px;background-color: $cef6c2d;color: $cf;font-size: $px14;border: 1px solid $cef6c2d;border-radius:4px;cursor: pointer;transition: all .35s;
+
+    &:hover{background-color: $cef6c2d;}
+    &.btn-default{
+        color: #747474;background-color: $cf;border: 1px solid #ddd;
+        &:hover{background-color: #e6e6e6;border: 1px solid #ccc;}
+    }
+    &.btn-small{width: 75px;}
+}
+/* 公共按钮 end */
+
+/* 开始还款 start */
+.repayment-now{
+    @extend .m-auto;
+    li{
+        margin: 0 20px;
+    }
+}
+/* 开始还款 end */
+
+/* icon start */
+.icon{
+    display:inline-block;
+
+    &.phone{
+        width:19px;height:31px;background: #fff url(/static/images/account/icon-phone.png) center center no-repeat;background-position:0 0;
+        
+        &.check{background-position:-19px 0;}
+    }
+    &.idcard{
+        width:31px;height:31px;background: #fff url(/static/images/account/icon-idcard.png) center center no-repeat;background-position:0 0;
+        
+        &.check{background-position:-31px 0;}
+    }
+    &.bankcard{
+        width:31px;height:31px;background: #fff url(/static/images/account/icon-bankcard.png) center center no-repeat;background-position:0 0;
+        
+        &.check{background-position:-31px 0;}
+    }
+}
+/* icon end */
+
+/* 借款记录 还款弹框 start */
+.payment-box-ul{
+    li{
+        padding: 20px 0;
+        span{display: inline-block; width: 50%;}
+        span:first-child{text-align: right;}
+        span:last-child{text-align: left;}
+        .cash-tips{
+            width: 135px;padding-left: 90px;
+            a{color: $cef6c2d;text-decoration: underline; }
+        }
+    }
+}
+.payment-box-btn{
+    .payment-error{height: 30px;color: $cef6c2d;}
+}
+/* 借款记录 还款弹框 end */
+
+/* 个人开户-银行列表 start */
+.bankinfo-box{
+    position: relative;display: $dib;width: 358px;height: 43px;border:1px solid #c6c6c6;border-radius: 5px;padding-left:20px;cursor: pointer;
+    .arrow{position:absolute; top:18px; right:15px;width: 14px; height: 7px;background:url("/static/images/lend/arrow.png") no-repeat;}
+    .bankinfo-list{
+        position: absolute;width: 100%; height: 200px;overflow-y:scroll;top: 43px;left: -1px;z-index: 3;border:1px solid #c6c6c6;background-color: #fff;border-radius: 5px;
+        li{
+            height: 40px;padding-left: 20px;line-height: 40px;cursor: pointer;
+            &:hover{background-color: #eee;}
+        }
+    }
+}
+/* 个人开户-银行列表 end */
+
+/* 自定义复选框 start */
+.check-style{
+    float: left;display: $dib;width: 14px;height: 14px;margin-top: 3px;margin-right:10px;background-color: $cf;border: 1px solid #bbb;border-radius: 3px;
+    &.active{background: $cef6c2d url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMAB+q1K/iRZkjKo4FoDn8hdt0AAAA1SURBVAjXYwABlg1gyuk5mKNnyCDcwOD0WIChLgLEYWB7egjIYWDIe2cIUsD5SACsfC0QAwBKdgsXyIWh6AAAAABJRU5ErkJggg==) center center no-repeat;border-color: $cef6c2d; }
+    &.check-all{margin-top: 0;}
+}
+/* 自定义复选框 end */
+
+/* 单独的错误提示 start */
+.error-group {
+    margin: 30px auto;color: $cef6c2d;font-size: $px16;text-align: center;
+}
+/* 单独的错误提示 end */
+
+/* 弹框里银行列表 start */
+.bankinfo-box{
+    &.bind-bank{
+        width: 290px;margin-left: -6px;padding-left: 0;border: 0;
+        .arrow{top: 9px;right: 0;}
+        .bankinfo-list{top: 36px;}
+    }
+}
+
+/* 解除绑定结果 start */
+.unbind-result{
+    margin: 50px 0;color: $c3;font-size: $px16;line-height: 93px;text-align: center;font-weight: bold;
+    img{margin-right: 30px;}
+}
+/* 解除绑定结果 end */
+
+/* 复制链接给好友 start */
+.copy-box{
+    .text-box{display: block; margin: 15px 50px;padding: 50px 0;border: 1px solid #eee;text-align: center; }
+}
+/* 复制链接给好友 end */

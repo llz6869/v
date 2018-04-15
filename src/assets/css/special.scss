@@ -1,0 +1,249 @@
+.special{
+    /*资金存管 start*/
+    .capital{
+        .top{width: 100%; height: 500px;background:url("/static/images/special/capital-top.jpg") no-repeat center center;}
+        /*银行存管模式 start*/
+        .pattern{ 
+            background:$cf;
+            .content{width:784px;height: 486px;padding:0 208px 100px; background:url("/static/images/public/flow-chart.png") no-repeat 208px 0;}
+        }
+        /*银行存管模式 end*/
+
+        /*银行存管优势 start*/
+        .advantage{
+            width: 1200px; padding-bottom:100px; 
+            .a-content{ 
+                width: 1200px;height: 310px;
+                .box{ float: left;width: 240px; height: 310px;padding-right: 80px;
+                    .box-top{ 
+                        width: 64px;height: 64px; margin: 0 auto;background:url("/static/images/special/advantage-icon.png") no-repeat; 
+                        &.supervise{background-position: 0 0;}
+                        &.safe{background-position: -64px 0;}
+                        &.user{background-position: -128px 0;}
+                        &.time{background-position: -192px 0;}
+                    }
+                    h3{ font-size:20px; line-height: 70px; text-align: $ta-c;color: $c3;}
+                    p{font-size: $px14;line-height: 30px; color: $c6;}
+                }
+                .box:last-child{ float: left;width: 240px; height: 310px; padding-right: 0;}
+            }
+        }
+        /*银行存管优势 end*/
+
+        /*金谷财行-厦门国际银行存管协议 start*/
+        .agreement{
+            background:$cf; padding-bottom:100px;
+            .agreement-bg{width: 1200px;height:522px;background:url("/static/images/special/agreement.png") no-repeat center center;}
+        }
+        /*金谷财行-厦门国际银行存管协议 end*/
+
+        /*开通存管账户 start*/
+        .sc-account{
+            .user{
+                padding:0 190px 100px;
+                .old-user{
+                    float:left;width: 240px;height: 322px; padding:33px 59px;background:$cf;border: 1px solid #eee;
+                    .head-old{ width: 70px; height: 70px;background:url("/static/images/special/user.png") no-repeat 0 0;}
+                    .head-new{ width: 70px; height: 70px;background:url("/static/images/special/user.png") no-repeat -70px 0;}
+                    h3{font-size:$px24; color:$c3; text-align: $ta-c;line-height: 70px;}
+                    p{font-size:$px16;line-height: 30px; color: $c6;padding-bottom: 30px;}
+                    .btn{ display:$db;width: 240px;height: 52px;font-size:$px18;line-height: 52px; color: $cf; text-align: $ta-c; background:$cef6c2d;}
+                }
+                .user-mr{margin-right: 100px;}
+            }
+        }
+        /*开通存管账户 end*/
+
+        /*常见问题 start*/
+        .problem{
+            background:$cf;padding-bottom: 60px; border-bottom: 1px solid #ddd;
+            h3{
+                padding-bottom:28px;font-size:$px24; color: $c3;font-weight: 300;line-height: 28px;
+                span{ display:$dib;width: $px24; height: $px24; line-height: $px24; text-align: $ta-c;font-size:$px18; color:$cf;background: $cef6c2d;border-radius: 12px;}
+            }
+            p{font-size:$px16; color: $c6; padding-bottom: 60px;}
+        }
+        /*常见问题 end*/
+    }
+    /*资金存管 end*/
+
+
+    /*CFCA start*/
+    .cfca{
+        .top{width: 100%; height: 410px;background:url("/static/images/special/cfca-top.jpg") no-repeat center center;}
+        .title-layer{ 
+            padding: 70px 0 120px; text-align: $ta-c;
+            .title-top{ position: relative;font-size: 42px;padding-bottom: 40px; border-bottom:1px solid $c0;
+                &:before{ position: absolute; left:50%; bottom:-11px;width: 22px; height: 22px; content: '';margin-left: -11px; display: $db; background:url("/static/images/special/title-box.png") no-repeat;}
+            }
+        }
+        
+        /*什么是CFCA？ start*/
+        .what{
+            background: $cf;padding-bottom: 110px;
+            p{ padding: 0 110px; font-size:$px16; line-height: 36px; color: $c6;}
+        }
+        /*什么是CFCA？ end*/
+
+        /*为什么选择CFCA？ start*/
+        .why{
+            p{ padding: 0 110px; font-size:$px16; line-height: 36px; color: $c6;}
+            .content{width:932px;height: 158px;padding:50px 134px 80px; background:url("/static/images/special/why-content.png") no-repeat 134px 50px;}
+        }
+        /*为什么选择CFCA？ end*/
+
+        /*启动电子数据存证 start*/
+        .card{
+            background:$cf;
+            .content{width:1068px;height: 200px;padding:40px 66px 50px; background:url("/static/images/special/card-content.png") no-repeat 66px 40px;}
+            .card-p{  
+                padding: 0 66px 150px;
+                font-size: $px16; color: $c0;
+                span{ float: left;display: $db; width: 318px; text-align: $ta-c;}
+                span:nth-child(2){padding: 0 57px;}
+            }
+        }
+        /*启动电子数据存证 end*/
+
+        /*常见问题 start*/
+        .problem{
+            padding-bottom: 90px; border-bottom: 1px solid #ddd;
+            h3{
+                padding: 28px 110px;font-size:$px24; color: $c3;font-weight: 300;line-height: 28px;
+                span{ display:$dib;width: $px24; height: $px24; line-height: $px24;margin-right: $px16; text-align: $ta-c;font-size:$px18; color:$cf;background: $cef6c2d;border-radius: 12px;}
+            }
+            p{padding: 0 110px;font-size:$px16; color: $c6; line-height: 30px;}
+        }
+        /*常见问题 end*/
+
+    }
+    /*CFCA end*/
+
+
+    /*优质资产 start*/
+    .assets{
+        .top{width: 100%; height: 500px;background:url("/static/images/special/assets-top.jpg") no-repeat center center;}
+        /*政策支持 start*/
+        .policy-cf{background:$cf;}
+        .policy{
+            padding-bottom: 70px;
+            .content{
+                width: 800px; height: 180px;
+                /*政策支持图像 start*/
+                .policy-head{ float:left;width: 180px;height: 180px; background: url("/static/images/special/policy-head.png")no-repeat 0 0;}
+                /*政策支持图像 end*/
+
+                /*市场信赖 start*/
+                .market-head{ float:left;width: 180px;height: 180px; background: url("/static/images/special/policy-head.png")no-repeat -200px 0;}
+                /*市场信赖 end*/
+
+                /*经营保障 start*/
+                .guarantee-head{float:left;width: 180px;height: 180px; background: url("/static/images/special/policy-head.png")no-repeat -400px 0;}
+                /*经营保障 end*/
+                p{float:left;width:540px; padding-top:30px;font-size:$px18;color:$c6;line-height: 42px;}
+                .pl{padding-left: 80px;}
+                .pr{padding-right: 80px;}
+            }
+        }
+        /*政策支持 end*/
+
+        /*市场信赖 start*/
+        .introduce{
+            padding-bottom: 100px;
+            p{width: 926px;margin: 0 73px;padding: 44px 64px;background:$cf; font-size:$px18;color:$c6;line-height: 42px;}
+        }
+        /*市场信赖 end*/
+    }
+    /*优质资产 end*/
+
+
+    /*安全保障 start*/
+    .safe{
+        .top{width: 100%; height: 500px;background:url("/static/images/special/safe-top.jpg") no-repeat center center;}
+        /*银行存管模式 start*/
+        .depository{
+            background:$cf;
+            .content{width:784px;height: 486px;padding:0 208px 100px; background:url("/static/images/public/flow-chart.png") no-repeat 208px 0;}
+        }
+        /*银行存管模式 end*/
+
+        /*全方位安全风控体系 start*/
+        .risk{
+            p{ text-align:$ta-c;font-size:$px16;color: $c9;}
+            .content{width:562px;height: 470px;padding:60px 319px 80px; background:url("/static/images/special/risk-content.png") no-repeat 319px 60px;}
+        }
+        /*全方位安全风控体系 end*/
+
+        /*CFCA电子合同认证 start*/
+        .contract{
+            background:$cf;
+            .content{
+                padding-bottom: 75px;
+                .features{
+                    float:left; width: 300px;
+                    .portrait{ width: 62px;height: 60px;padding-bottom:30px;background:url("/static/images/special/features.png") no-repeat 0 0;}
+                    .portrait-m{ width: 62px;height: 60px;padding-bottom:30px;background:url("/static/images/special/features.png") no-repeat -70px 0;}
+                    .portrait-r{ width: 62px;height: 60px;padding-bottom:30px;background:url("/static/images/special/features.png") no-repeat -140px 0;}
+                    p{font-size:$px16;color: $c3;line-height: 42px;}
+                }
+                .features-p{padding: 0 150px;}
+            }
+        }
+        /*CFCA电子合同认证 end*/
+
+        /*专业信息安全技术保障 start*/
+        .skill{
+            padding-bottom: 54px;
+            .content{
+                width: 964px; padding-bottom: 44px;
+                .module{
+                    width: 300px;height: 64px; padding: 80px 60px; border:1px solid #eee; background: $cf;
+                    /*自主研发银行级安全*/
+                    .secure{width: 64px; height: 64px;background:url("/static/images/special/skill-module.png") no-repeat 0 0;}
+                    /*技术加密*/
+                    .encrypt{width: 64px; height: 64px;background:url("/static/images/special/skill-module.png") no-repeat -70px 0;}
+                    /*用户信息隐私保护*/
+                    .privacy{width: 64px; height: 64px;background:url("/static/images/special/skill-module.png") no-repeat -140px 0;}
+                    /*全年无休，24小时在线*/
+                    .time{width: 64px; height: 64px;background:url("/static/images/special/skill-module.png") no-repeat -210px 0;}
+                    p{padding-left: 30px; width: 206px; line-height: 64px;font-size:$px18; color: $c6;}
+                }
+
+            }
+        }
+        /*专业信息安全技术保障 end*/
+
+        /*品牌实力保障 start*/
+        .brand{
+            background:$cf;padding-bottom: 70px;
+            .content{
+                width: 964px;
+                .portrait{width: 200px;height: 200px;background:url("/static/images/special/brand-portrait.png") no-repeat center center;}
+                p{padding-left: 60px; width: 700px; color: $c3;font-size:$px16; line-height: 36px;}
+            }
+        }
+        /*品牌实力保障 end*/
+
+        /*数据安全异地容灾备份 start*/
+        .backups{
+            .content{
+                padding-bottom: 80px;
+                .txt{
+                    width: 544px;padding: 75px 70px 0 0;
+                    p{font-size:$px16;line-height: 32px; color: $c6; padding-bottom: 36px;}
+                }
+                .picture{width: 586px;height: 422px;background:url("/static/images/special/backups-picture.jpg") no-repeat;}
+            }
+
+        }
+        /*数据安全异地容灾备份 end*/
+
+        /*四重专业认证证书 start*/
+        .certificate{
+            padding-bottom:98px;border-bottom: 1px solid #ddd;background:$cf;
+            .content{width: 1058px; height: 82px; padding-top:22px;background:url("/static/images/special/certificate-content.png") no-repeat center center;}
+        }
+        /*四重专业认证证书 end*/
+    }
+    /*安全保障 end*/
+}

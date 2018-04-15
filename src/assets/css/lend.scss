@@ -1,0 +1,159 @@
+/*我要借款（开户）start*/
+.lend{
+    /*标题 start*/
+    .top{width:100%;height: 380px;background:url("/static/images/lend/lend-top.jpg") no-repeat center center;}
+    /*标题 end*/
+
+    /*品质 start*/
+    .merit-layer{
+        width: 100%;background:$cf; padding:88px 0 100px;
+        .merit{width: 1200px;height: 220px; background:url("/static/images/lend/merit.png") no-repeat;}
+        p{
+            height: 36px;padding-top: 40px;font-size: 30px;
+            span{ float: left; width: 300px; text-align: $ta-c;}
+        }
+    }
+    /*品质 end*/
+
+    /*借款产品 start*/
+    .lend-product{
+        .content{
+            display:$db;width: 336px;height: 218px;margin: 0 15px 55px;padding:76px 417px; text-align: $ta-c; background:$cf; color: $c3;border-radius: 8px;
+            .l-img{ width: 92px; height: 88px; background:url("/static/images/lend/lend-content.png") no-repeat;}
+            h3{ padding: 32px 0 20px; font-size: 36px;}
+            p{color: $c9; font-size: $px24; }
+        }
+    }
+    /*借款产品 end*/
+
+    /*借款流程 start*/
+    .lend-flow{
+        width: 100%;background:$cf;
+        .content{
+            padding:0 60px 100px;
+            .flow-content{width: 1080px;height: 178px; background:url("/static/images/lend/flow-content.jpg") no-repeat;}
+            p{height: 36px;font-size: $px24; color: $c0;
+                span{ float: left; width: 270px; text-align: $ta-c;}
+                span:nth-of-type(2),span:nth-of-type(3){ width: 250px; padding-left: 20px;}
+            }
+        }
+
+    }
+    /*借款流程 end*/
+
+    /*常见问题 start*/
+    .lend-problem{
+        padding-bottom: 110px;
+        .p-content{
+            padding: 0 50px;
+            .words-layer{
+                padding-top: 50px;
+                .words{
+                    width: 490px;text-align: $ta-l;
+                    h3{font-size:$px24; color: $c0;line-height: 72px;}
+                    p{font-size:$px16;color: $c6;line-height: 30px;}
+                }
+            }
+        }
+    }
+    /*常见问题 end*/
+}
+/*我要借款（开户）end*/
+
+/*企业贷款模块 start*/
+.enterpri-lend{
+    /*标题 start*/
+    .top{width:100%;height: 380px;background:url("/static/images/lend/enterpri-top.jpg") no-repeat center center;}
+    /*标题 end*/
+
+    /*如何贷款 start*/
+    .enterpri-how{
+        width: 100%;height:100%;background:#fafafa;
+        .t-layer{ width: 100%; background: $cf;
+            .content{
+                width: 1200px;height: 186px;padding-bottom:104px;
+                .enterpr-content{display:$db;width: 1200px;height: 142px; background:url("/static/images/lend/enterpr-contenti.jpg") no-repeat;}
+                p{
+                    font-size: $px24; color: $c0; line-height: 30px; padding-top: $px14;
+                    span{ float: left;text-align: $ta-c;}
+                    span:nth-of-type(1){ width: 140px;padding-right: 64px;}
+                    span:nth-of-type(2),span:nth-of-type(4){width: 268px;}
+                    span:nth-of-type(3){width: 240px; padding-left: 28px;}
+                    span:nth-of-type(5){ width: 140px;padding-left: 52px;}
+                }
+
+            }
+        }
+        p{
+            font-size:$px24;color: $c0;line-height:38px; padding-bottom:$px18;
+            &.p-bottom{ padding-bottom: 60px;}
+        }
+        .btn{ display:$db; width: 448px;height: 80px;margin:218px auto;color: $cf; font-size:24px;line-height: 80px;text-align: $ta-c;background:#f7b463;border: none;}
+    }
+    /*如何贷款 end*/
+}
+/*企业贷款模块 end*/
+
+/*开户流程——企业开户 start*/
+.open-account{
+    width: 550px;margin:40px 0;padding: 70px 346px 80px 304px;background:$cf;
+    input{ float:right;width: 377px;height: 44px;text-indent: 20px;color: #bbb;border: 1px solid #bbb;border-radius: 5px;}
+    .btn{display: $db;width: 382px;height: 44px; cursor: pointer;line-height: 44px;text-align: $ta-c; color: $cf;font-size:20px;background:$cef6c2d;}
+    /*错误提示*/
+    .error{position: absolute;top:38px;left:190px;width: 350px;text-align: left;font-size:$px14;color: $cef6c2d;}
+    .un-overflow{
+        overflow: inherit;
+    }
+}
+/*开户流程——企业开户 end*/
+
+
+/* 个人开户-银行列表 start */
+.bankinfo-box{
+    position: relative;display: $dib;width: 357px;height: 43px;border:1px solid #c6c6c6;border-radius: 5px;padding-left:20px;cursor: pointer;
+    .arrow{position:absolute; top:18px; right:15px;width: 14px; height: 7px;background:url("/static/images/lend/arrow.png") no-repeat;}
+    .bankinfo-list{
+        position: absolute;width: 100%; max-height: 200px;overflow-y:scroll;top: 43px;left: -1px;z-index: 3;border:1px solid #c6c6c6;background-color: #fff;border-radius: 5px;
+        li{
+            height: 40px;padding-left: 20px;line-height: 40px;cursor: pointer;
+            &:hover{background-color: #eee;}
+        }
+    }
+    &.enterprise{
+        float:right;width: 335px;margin-left: 0px;padding-left: 0;border: 0;
+        .arrow{top: 9px;right: 0;}
+        .bankinfo-list{top: 36px;}
+    }
+}
+/* 个人开户-银行列表 end */
+
+
+/*开户流程——企业开户成功或失败 start*/
+.success-failure{
+    position:relative;width: 400px;height: 306px;margin:40px 0;padding: 160px 408px 276px 408px;background:$cf;
+    /*成功*/
+    .success{width: 54px;height: 54px;background:url("/static/images/lend/success-failure.png") no-repeat 0 0;}
+    /*失败*/
+    .failure{width: 54px;height: 54px;background:url("/static/images/lend/success-failure.png") no-repeat -60px 0;}
+    h3{padding-bottom: 8px;font-size:20px; text-align: $ta-c;color: $c3;line-height:68px;font-weight: 600;}
+    p{font-size:$px14;text-align: $ta-c;color: $c6;line-height:28px;}
+    .btn{display:$db;width: 384px;height: 48px;margin-top: 72px;background:$cef6c2d;text-align: $ta-c;color: $cf;font-size:20px;line-height: 48px;}
+}
+/*开户流程——企业开户成功或失败 end*/
+
+
+.enterprise-form-group{
+    .ep-form-group{
+        width:438px;height:20px;margin:30px auto;padding:15px 20px;border:1px solid #eee;
+        input{width: 255px;}
+        span{margin-right: 15px;border-right: 1px solid #eee;}
+        .tr{display:$dib;width:90px;text-align:right;}
+        &.nobd{width:480px;padding:14px 0;border:0;text-align:center;}
+        .setting-btn{width:100%;padding:18px 0;font-size:$px16;color:$cf;background-color:$cef6c2d;}
+        .phoneCode-btn{float:right;width:100px;height:20px;color: $c6;background-color: #fff;cursor: pointer;border-radius: 0 8px 8px 0;}
+        em{display:$dib;margin:0 15px 0 0;padding:0 15px 0 10px;color:$cef6c2d;border-right:1px solid #eee;vertical-align: middle;}
+        &.unbind{@extend .nobd;height: auto;}
+        &.noipt{margin: 15px auto;border:0;}
+        .error{margin: 15px auto;padding-top: 3px;font-size:$px14;color: $cef6c2d; }
+    }
+}
